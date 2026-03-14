@@ -64,7 +64,6 @@ export function Header() {
           />
           <div className="hidden sm:block">
             <p className="text-lg font-bold text-white">ลูกชิ้นรสโอชา</p>
-            <p className="text-xs text-white/80">Since 1978</p>
           </div>
         </Link>
 
