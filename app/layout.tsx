@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Sarabun, Geist } from 'next/font/google'
+import { Sarabun, Bebas_Neue } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Header } from '@/components/header'
@@ -8,13 +8,14 @@ import { FloatingContact } from '@/components/floating-contact'
 
 const sarabun = Sarabun({ 
   subsets: ["thai", "latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-sarabun"
 })
 
-const geist = Geist({ 
+const bebasNeue = Bebas_Neue({ 
   subsets: ["latin"],
-  variable: "--font-geist"
+  weight: "400",
+  variable: "--font-display"
 })
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="th">
-      <body className={`${sarabun.variable} ${geist.variable} font-sans antialiased`}>
+      <body className={`${sarabun.variable} ${bebasNeue.variable} antialiased`}>
         <Header />
         <main>{children}</main>
         <Footer />
