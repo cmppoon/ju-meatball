@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import Image from "next/image"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
+import Image from "next/image";
+import { useState, useRef, useEffect } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navigation = [
   { name: "หน้าหลัก", href: "/" },
@@ -12,10 +12,44 @@ const navigation = [
   { name: "เกี่ยวกับเรา", href: "/about" },
   { name: "บทความ", href: "/articles" },
   { name: "ติดต่อเรา", href: "/contact" },
-]
+];
+
+const services = [
+  {
+    name: "OEM",
+    href: "/services/oem",
+    description: "บริการผลิตสินค้าภายใต้แบรนด์ของคุณ",
+  },
+  {
+    name: "ตัวแทนจำหน่าย",
+    href: "/services/distributor",
+    description: "ร่วมเป็นตัวแทนจำหน่ายกับเรา",
+  },
+  {
+    name: "แฟรนไชส์",
+    href: "/services/franchise",
+    description: "โอกาสธุรกิจแฟรนไชส์ลูกชิ้น",
+  },
+];
 
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setServicesOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-[#8B1A1A] shadow-lg">
@@ -35,8 +69,53 @@ export function Header() {
         </Link>
 
         {/* Desktop navigation */}
-        <div className="hidden lg:flex lg:gap-x-8">
-          {navigation.map((item) => (
+        <div className="hidden lg:flex lg:items-center lg:gap-x-8">
+          {navigation.slice(0, 2).map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-sm font-medium text-white/90 transition-colors hover:text-white"
+            >
+              {item.name}
+            </Link>
+          ))}
+
+          {/* Services Dropdown */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className="flex items-center gap-1 text-sm font-medium text-white/90 transition-colors hover:text-white"
+            >
+              บริการ
+              <ChevronDown
+                className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+
+            {servicesOpen && (
+              <div className="absolute left-0 top-full mt-2 w-64 rounded-lg bg-white shadow-xl ring-1 ring-black/5">
+                <div className="p-2">
+                  {services.map((service) => (
+                    <Link
+                      key={service.name}
+                      href={service.href}
+                      className="block rounded-md px-3 py-2 transition-colors hover:bg-[#8B1A1A]/10"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      <p className="text-sm font-medium text-[#8B1A1A]">
+                        {service.name}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        {service.description}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {navigation.slice(2).map((item) => (
             <Link
               key={item.name}
               href={item.href}
@@ -48,10 +127,7 @@ export function Header() {
         </div>
 
         <div className="hidden lg:block">
-          <Button
-            asChild
-            className="bg-white text-[#8B1A1A] hover:bg-white/90"
-          >
+          <Button asChild className="bg-white text-[#8B1A1A] hover:bg-white/90">
             <Link href="/contact">สั่งซื้อเลย</Link>
           </Button>
         </div>
@@ -73,8 +149,46 @@ export function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#8B1A1A] border-t border-white/10">
-          <div className="px-4 py-4 space-y-3">
-            {navigation.map((item) => (
+          <div className="px-4 py-4 space-y-1">
+            {navigation.slice(0, 2).map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block text-base font-medium text-white/90 hover:text-white py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+
+            {/* Mobile Services Dropdown */}
+            <div>
+              <button
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                className="flex w-full items-center justify-between text-base font-medium text-white/90 hover:text-white py-2"
+              >
+                บริการ
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+              {mobileServicesOpen && (
+                <div className="ml-4 space-y-1 border-l border-white/20 pl-4">
+                  {services.map((service) => (
+                    <Link
+                      key={service.name}
+                      href={service.href}
+                      className="block py-2 text-sm text-white/80 hover:text-white"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {navigation.slice(2).map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -94,5 +208,5 @@ export function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }

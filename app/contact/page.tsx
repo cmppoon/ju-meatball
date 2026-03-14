@@ -1,10 +1,11 @@
-import type { Metadata } from "next"
-import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import type { Metadata } from "next";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "ติดต่อเรา - ลูกชิ้นรสโอชา | Contact Us",
-  description: "ติดต่อลูกชิ้นรสโอชา สั่งซื้อสินค้า หรือสอบถามข้อมูลเพิ่มเติม โทร 012-345-6789",
-}
+  description:
+    "ติดต่อลูกชิ้นรสโอชา สั่งซื้อสินค้า หรือสอบถามข้อมูลเพิ่มเติม โทร 012-345-6789",
+};
 
 const contactInfo = [
   {
@@ -31,7 +32,7 @@ const contactInfo = [
     details: ["จันทร์ - เสาร์: 08:00 - 18:00", "อาทิตย์: 09:00 - 15:00"],
     link: null,
   },
-]
+];
 
 export default function ContactPage() {
   return (
@@ -41,7 +42,8 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">ติดต่อเรา</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            สนใจสั่งซื้อสินค้าหรือมีคำถาม? ติดต่อเราได้ทุกช่องทาง เรายินดีให้บริการ
+            สนใจสั่งซื้อสินค้าหรือมีคำถาม ติดต่อเราได้ทุกช่องทาง
+            เรายินดีให้บริการ
           </p>
         </div>
       </section>
@@ -58,7 +60,9 @@ export default function ContactPage() {
                 <div className="w-14 h-14 bg-[#8B1538]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <info.icon className="w-7 h-7 text-[#8B1538]" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-3">{info.title}</h3>
+                <h3 className="text-lg font-bold text-foreground mb-3">
+                  {info.title}
+                </h3>
                 <div className="space-y-1">
                   {info.details.map((detail, idx) =>
                     info.link ? (
@@ -73,7 +77,7 @@ export default function ContactPage() {
                       <p key={idx} className="text-muted-foreground">
                         {detail}
                       </p>
-                    )
+                    ),
                   )}
                 </div>
               </div>
@@ -85,134 +89,32 @@ export default function ContactPage() {
       {/* Map and Form Section */}
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div className="bg-card p-8 rounded-2xl shadow-lg">
-              <h2 className="text-2xl font-bold text-foreground mb-6">
-                ส่งข้อความถึงเรา
-              </h2>
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      ชื่อ-นามสกุล
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-[#8B1538] transition-all"
-                      placeholder="กรอกชื่อของคุณ"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      เบอร์โทรศัพท์
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-[#8B1538] transition-all"
-                      placeholder="0XX-XXX-XXXX"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-foreground mb-2"
-                  >
-                    อีเมล
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-[#8B1538] transition-all"
-                    placeholder="your@email.com"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium text-foreground mb-2"
-                  >
-                    หัวข้อ
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-[#8B1538] transition-all"
-                  >
-                    <option value="">เลือกหัวข้อ</option>
-                    <option value="order">สั่งซื้อสินค้า</option>
-                    <option value="wholesale">สั่งซื้อจำนวนมาก / ขายส่ง</option>
-                    <option value="feedback">ข้อเสนอแนะ</option>
-                    <option value="complaint">ร้องเรียน</option>
-                    <option value="other">อื่นๆ</option>
-                  </select>
-                </div>
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-foreground mb-2"
-                  >
-                    ข้อความ
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-[#8B1538] transition-all resize-none"
-                    placeholder="รายละเอียดที่ต้องการติดต่อ..."
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-[#8B1538] text-white py-4 rounded-lg font-semibold hover:bg-[#6d1029] transition-colors"
-                >
-                  ส่งข้อความ
-                </button>
-              </form>
-            </div>
-
-            {/* Map */}
-            <div className="flex flex-col">
-              <h2 className="text-2xl font-bold text-foreground mb-6">แผนที่</h2>
-              <div className="flex-1 min-h-[400px] rounded-2xl overflow-hidden shadow-lg">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.7614973574407!2d100.56!3d13.73!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQzJzQ4LjAiTiAxMDDCsDMzJzM2LjAiRQ!5e0!3m2!1sen!2sth!4v1234567890"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, minHeight: "400px" }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="ลูกชิ้นรสโอชา - แผนที่"
-                />
-              </div>
-              <div className="mt-6 bg-card p-6 rounded-2xl shadow-lg">
-                <h3 className="font-bold text-foreground mb-2">ที่อยู่สำหรับนำทาง</h3>
-                <p className="text-muted-foreground">
-                  123 ถนนสุขุมวิท แขวงคลองตัน เขตคลองเตย กรุงเทพมหานคร 10110
-                </p>
-                <a
-                  href="https://maps.google.com/?q=13.7321,100.5673"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 text-[#8B1538] font-medium hover:underline"
-                >
-                  <MapPin className="w-4 h-4" />
-                  เปิดใน Google Maps
-                </a>
-              </div>
+          {/* Map */}
+          <div className="flex flex-col">
+            <h2 className="text-2xl font-bold text-foreground mb-6">แผนที่</h2>
+            <p className="text-muted-foreground">
+              123 ถนนสุขุมวิท แขวงคลองตัน เขตคลองเตย กรุงเทพมหานคร 10110
+            </p>
+            <a
+              href="https://maps.google.com/?q=13.7321,100.5673"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-4 text-[#8B1538] font-medium hover:underline"
+            >
+              <MapPin className="w-4 h-4" />
+              เปิดใน Google Maps
+            </a>
+            <div className="flex-1 min-h-[400px] rounded-2xl overflow-hidden shadow-lg mt-6">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.7614973574407!2d100.56!3d13.73!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQzJzQ4LjAiTiAxMDDCsDMzJzM2LjAiRQ!5e0!3m2!1sen!2sth!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: "400px" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="ลูกชิ้นรสโอชา - แผนที่"
+              />
             </div>
           </div>
         </div>
@@ -279,46 +181,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-              คำถามที่พบบ่อย
-            </h2>
-          </div>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {[
-              {
-                question: "สั่งซื้อขั้นต่ำกี่ชิ้น?",
-                answer:
-                  "ลูกค้าทั่วไปไม่มีขั้นต่ำในการสั่งซื้อ สำหรับลูกค้าขายส่งสามารถติดต่อเพื่อสอบถามราคาพิเศษได้",
-              },
-              {
-                question: "จัดส่งอย่างไร?",
-                answer:
-                  "เราจัดส่งด้วยรถห้องเย็นทั่วประเทศ รับประกันความสดใหม่ของสินค้า จัดส่งภายใน 1-3 วันทำการ",
-              },
-              {
-                question: "สินค้าเก็บได้นานแค่ไหน?",
-                answer:
-                  "ลูกชิ้นสดเก็บได้ 5-7 วันในตู้เย็น หรือ 3-6 เดือนในช่องแช่แข็ง ควรเก็บในถุงสุญญากาศเพื่อรักษาคุณภาพ",
-              },
-              {
-                question: "มีบริการส่งฟรีหรือไม่?",
-                answer:
-                  "ส่งฟรีในเขตกรุงเทพฯ และปริมณฑล สำหรับยอดสั่งซื้อ 500 บาทขึ้นไป ต่างจังหวัดคิดค่าจัดส่งตามระยะทาง",
-              },
-            ].map((faq, index) => (
-              <div key={index} className="bg-card p-6 rounded-xl shadow">
-                <h3 className="font-bold text-foreground mb-2">{faq.question}</h3>
-                <p className="text-muted-foreground">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
-  )
+  );
 }
