@@ -16,11 +16,11 @@ export function MarqueeBanner() {
     <div className="bg-[#0A0A0A] py-4 overflow-hidden border-y-4 border-[#8B1A1A]">
       <div className="flex animate-marquee whitespace-nowrap">
         {repeatedMessages.map((message, index) => (
-          <span key={index} className="flex items-center gap-8 mx-8">
+          <span key={index} className="flex items-center gap-3 mx-8">
+            <span className="text-[#D4A853]  text-2xl">&#x2022;</span>
             <span className="text-white font-extrabold text-lg uppercase tracking-[0.2em]">
               {message}
             </span>
-            <span className="text-[#8B1A1A] text-2xl">&#x2022;</span>
           </span>
         ))}
       </div>
