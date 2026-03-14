@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CheckCircle, Factory, Shield, Truck, Users } from "lucide-react"
+import { HeroSection } from "@/components/hero-section"
 
 export const metadata = {
   title: "OEM - บริการผลิตสินค้าภายใต้แบรนด์ของคุณ | ลูกชิ้นรสโอชา",
@@ -43,20 +44,13 @@ const services = [
 export default function OEMPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-[#8B1A1A] py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              บริการ OEM
-            </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
-              ผลิตลูกชิ้นและผลิตภัณฑ์แปรรูปเนื้อสัตว์คุณภาพสูง ภายใต้แบรนด์ของคุณ
-              ด้วยประสบการณ์กว่า 45 ปี
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        title="บริการ OEM"
+        subtitle="ผลิตลูกชิ้นและผลิตภัณฑ์แปรรูปเนื้อสัตว์คุณภาพสูง ภายใต้แบรนด์ของคุณ ด้วยประสบการณ์กว่า 45 ปี"
+        imageSrc="/images/hero.jpg"
+        imageAlt="บริการ OEM ลูกชิ้นรสโอชา"
+        className="bg-[#8B1A1A]"
+      />
 
       {/* Benefits Section */}
       <section className="py-16">

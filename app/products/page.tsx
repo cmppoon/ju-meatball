@@ -1,7 +1,8 @@
-import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import type { Metadata } from "next"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { HeroSection } from "@/components/hero-section"
 
 export const metadata: Metadata = {
   title: "สินค้า - ลูกชิ้นรสโอชา",
@@ -42,16 +43,13 @@ const products = [
 export default function ProductsPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#8B1A1A] py-16">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">สินค้าของเรา</h1>
-          <p className="text-white/80 max-w-2xl mx-auto leading-relaxed">
-            ลูกชิ้นคุณภาพพรีเมียม ผลิตจากวัตถุดิบชั้นดี
-            ด้วยสูตรลับที่สืบทอดมากว่า 45 ปี
-          </p>
-        </div>
-      </section>
+      <HeroSection
+        title="สินค้าของเรา"
+        subtitle="ลูกชิ้นคุณภาพพรีเมียม ผลิตจากวัตถุดิบชั้นดี ด้วยสูตรลับที่สืบทอดมากว่า 45 ปี"
+        imageSrc="/images/hero.jpg"
+        imageAlt="ลูกชิ้นคุณภาพ"
+        className="bg-[#8B1A1A]"
+      />
 
       {/* Products Grid */}
       <section className="py-16 bg-[#FFF5F5]">

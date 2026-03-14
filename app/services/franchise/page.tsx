@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CheckCircle, GraduationCap, MapPin, Store, Utensils } from "lucide-react"
+import { HeroSection } from "@/components/hero-section"
 
 export const metadata = {
   title: "แฟรนไชส์ - โอกาสธุรกิจลูกชิ้นรสโอชา | ลูกชิ้นรสโอชา",
@@ -86,20 +87,13 @@ const steps = [
 export default function FranchisePage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-[#8B1A1A] py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              แฟรนไชส์ลูกชิ้นรสโอชา
-            </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
-              โอกาสธุรกิจที่มั่นคง ลงทุนต่ำ คืนทุนเร็ว
-              กับแบรนด์ที่คนไทยไว้วางใจมากว่า 45 ปี
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        title="แฟรนไชส์ลูกชิ้นรสโอชา"
+        subtitle="โอกาสธุรกิจที่มั่นคง ลงทุนต่ำ คืนทุนเร็ว กับแบรนด์ที่คนไทยไว้วางใจมากว่า 45 ปี"
+        imageSrc="/images/hero.jpg"
+        imageAlt="แฟรนไชส์ลูกชิ้นรสโอชา"
+        className="bg-[#8B1A1A]"
+      />
 
       {/* Benefits Section */}
       <section className="py-16">

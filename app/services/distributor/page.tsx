@@ -1,12 +1,14 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { CheckCircle, Gift, Headphones, TrendingUp, Truck } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { CheckCircle, Gift, Headphones, TrendingUp, Truck } from "lucide-react";
+import { HeroSection } from "@/components/hero-section";
 
 export const metadata = {
   title: "ตัวแทนจำหน่าย - ร่วมเป็นพาร์ทเนอร์กับเรา | ลูกชิ้นรสโอชา",
-  description: "เปิดรับสมัครตัวแทนจำหน่ายลูกชิ้นรสโอชา พร้อมการสนับสนุนด้านการตลาดและผลตอบแทนที่คุ้มค่า",
-}
+  description:
+    "เปิดรับสมัครตัวแทนจำหน่ายลูกชิ้นรสโอชา พร้อมการสนับสนุนด้านการตลาดและผลตอบแทนที่คุ้มค่า",
+};
 
 const benefits = [
   {
@@ -29,7 +31,7 @@ const benefits = [
     title: "ทีมซัพพอร์ต",
     description: "ทีมงานพร้อมให้คำปรึกษาและช่วยเหลือตลอดเวลา",
   },
-]
+];
 
 const requirements = [
   "มีหน้าร้านหรือช่องทางจำหน่ายที่ชัดเจน",
@@ -37,7 +39,7 @@ const requirements = [
   "มีความมุ่งมั่นในการทำธุรกิจร่วมกัน",
   "สามารถสั่งซื้อสินค้าขั้นต่ำตามที่กำหนด",
   "พร้อมปฏิบัติตามนโยบายและมาตรฐานของบริษัท",
-]
+];
 
 const levels = [
   {
@@ -58,24 +60,18 @@ const levels = [
     discount: "ส่วนลด 10%",
     benefits: ["สื่อการตลาดฟรี"],
   },
-]
+];
 
 export default function DistributorPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-[#8B1A1A] py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              ร่วมเป็นตัวแทนจำหน่าย
-            </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
-              โอกาสทางธุรกิจที่ดี กับแบรนด์ลูกชิ้นคุณภาพที่คนไทยไว้วางใจมากว่า 45 ปี
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        title="ร่วมเป็นตัวแทนจำหน่าย"
+        subtitle="โอกาสทางธุรกิจที่ดี กับแบรนด์ลูกชิ้นคุณภาพที่คนไทยไว้วางใจมากว่า 45 ปี"
+        imageSrc="/images/hero.jpg"
+        imageAlt="ตัวแทนจำหน่ายลูกชิ้นรสโอชา"
+        className="bg-[#8B1A1A]"
+      />
 
       {/* Benefits Section */}
       <section className="py-16">
@@ -95,7 +91,9 @@ export default function DistributorPage() {
                 <h3 className="mt-4 text-lg font-semibold text-gray-900">
                   {benefit.title}
                 </h3>
-                <p className="mt-2 text-sm text-gray-600">{benefit.description}</p>
+                <p className="mt-2 text-sm text-gray-600">
+                  {benefit.description}
+                </p>
               </div>
             ))}
           </div>
@@ -121,7 +119,9 @@ export default function DistributorPage() {
                     แนะนำ
                   </span>
                 )}
-                <h3 className="text-xl font-bold text-gray-900">{level.name}</h3>
+                <h3 className="text-xl font-bold text-gray-900">
+                  {level.name}
+                </h3>
                 <p className="mt-2 text-2xl font-bold text-[#8B1A1A]">
                   {level.discount}
                 </p>
@@ -130,7 +130,10 @@ export default function DistributorPage() {
                 </p>
                 <ul className="mt-6 space-y-3">
                   {level.benefits.map((b) => (
-                    <li key={b} className="flex items-center gap-2 text-sm text-gray-600">
+                    <li
+                      key={b}
+                      className="flex items-center gap-2 text-sm text-gray-600"
+                    >
                       <CheckCircle className="h-4 w-4 text-green-500" />
                       {b}
                     </li>
@@ -193,5 +196,5 @@ export default function DistributorPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

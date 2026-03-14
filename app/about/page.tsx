@@ -1,17 +1,21 @@
-import Image from "next/image"
-import type { Metadata } from "next"
-import { Award, Users, Heart, Clock } from "lucide-react"
+import type { Metadata } from "next";
+import { Award, Users, Heart, Clock } from "lucide-react";
+
+import Image from "next/image";
+import { HeroSection } from "@/components/hero-section";
 
 export const metadata: Metadata = {
   title: "เกี่ยวกับเรา - ลูกชิ้นรสโอชา | About Us",
-  description: "เรียนรู้เรื่องราวของลูกชิ้นรสโอชา ผู้ผลิตลูกชิ้นคุณภาพตั้งแต่ปี 1978 ด้วยสูตรดั้งเดิมและวัตถุดิบคัดสรร",
-}
+  description:
+    "เรียนรู้เรื่องราวของลูกชิ้นรสโอชา ผู้ผลิตลูกชิ้นคุณภาพตั้งแต่ปี 1978 ด้วยสูตรดั้งเดิมและวัตถุดิบคัดสรร",
+};
 
 const milestones = [
   {
     year: "1978",
     title: "จุดเริ่มต้น",
-    description: "ก่อตั้งกิจการลูกชิ้นเล็กๆ ในตลาดท้องถิ่น ด้วยสูตรลับจากรุ่นสู่รุ่น",
+    description:
+      "ก่อตั้งกิจการลูกชิ้นเล็กๆ ในตลาดท้องถิ่น ด้วยสูตรลับจากรุ่นสู่รุ่น",
   },
   {
     year: "1990",
@@ -26,14 +30,16 @@ const milestones = [
   {
     year: "2015",
     title: "ขยายตลาด",
-    description: "เริ่มจำหน่ายสินค้าทั่วประเทศ ผ่านห้างสรรพสินค้าและซูเปอร์มาร์เก็ตชั้นนำ",
+    description:
+      "เริ่มจำหน่ายสินค้าทั่วประเทศ ผ่านห้างสรรพสินค้าและซูเปอร์มาร์เก็ตชั้นนำ",
   },
   {
     year: "ปัจจุบัน",
     title: "ก้าวสู่อนาคต",
-    description: "พัฒนาผลิตภัณฑ์ใหม่อย่างต่อเนื่อง พร้อมรักษาคุณภาพและรสชาติดั้งเดิม",
+    description:
+      "พัฒนาผลิตภัณฑ์ใหม่อย่างต่อเนื่อง พร้อมรักษาคุณภาพและรสชาติดั้งเดิม",
   },
-]
+];
 
 const values = [
   {
@@ -56,35 +62,24 @@ const values = [
     title: "ประสบการณ์",
     description: "กว่า 45 ปีแห่งความเชี่ยวชาญในการผลิตลูกชิ้นคุณภาพ",
   },
-]
+];
 
 const stats = [
   { number: "45+", label: "ปีแห่งประสบการณ์" },
   { number: "50+", label: "พนักงาน" },
   { number: "1M+", label: "ลูกค้าที่ไว้วางใจ" },
   { number: "20+", label: "ผลิตภัณฑ์" },
-]
+];
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center">
-        <Image
-          src="/images/hero.jpg"
-          alt="ลูกชิ้นรสโอชา"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">เกี่ยวกับเรา</h1>
-          <p className="text-xl md:text-2xl text-white/90">
-            ลูกชิ้นรสโอชา - ตำนานความอร่อยตั้งแต่ปี 1978
-          </p>
-        </div>
-      </section>
+      <HeroSection
+        title="เกี่ยวกับเรา"
+        subtitle="ลูกชิ้นรสโอชา - ตำนานความอร่อยตั้งแต่ปี 1978"
+        imageSrc="/images/hero.jpg"
+        imageAlt="ลูกชิ้นรสโอชา"
+      />
 
       {/* Story Section */}
       <section className="py-16 md:py-24">
@@ -99,18 +94,20 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  ลูกชิ้นรสโอชา เริ่มต้นจากความรักในการทำอาหารของคุณยายในปี 1978 
-                  ด้วยสูตรลับที่สืบทอดมาจากรุ่นสู่รุ่น ลูกชิ้นของเราจึงมีรสชาติที่เป็นเอกลักษณ์ 
-                  หอม อร่อย และเด้งกรุบ ไม่เหมือนใคร
+                  ลูกชิ้นรสโอชา เริ่มต้นจากความรักในการทำอาหารของคุณยายในปี 1978
+                  ด้วยสูตรลับที่สืบทอดมาจากรุ่นสู่รุ่น
+                  ลูกชิ้นของเราจึงมีรสชาติที่เป็นเอกลักษณ์ หอม อร่อย และเด้งกรุบ
+                  ไม่เหมือนใคร
                 </p>
                 <p>
-                  วันนี้ เราได้พัฒนาจากร้านเล็กๆ ในตลาด กลายเป็นโรงงานผลิตที่ทันสมัย 
-                  พร้อมมาตรฐานการผลิตระดับสากล แต่สิ่งที่ไม่เคยเปลี่ยนคือ 
-                  ความใส่ใจในทุกขั้นตอนการผลิต และการคัดสรรวัตถุดิบคุณภาพดีที่สุด
+                  วันนี้ เราได้พัฒนาจากร้านเล็กๆ ในตลาด
+                  กลายเป็นโรงงานผลิตที่ทันสมัย พร้อมมาตรฐานการผลิตระดับสากล
+                  แต่สิ่งที่ไม่เคยเปลี่ยนคือ ความใส่ใจในทุกขั้นตอนการผลิต
+                  และการคัดสรรวัตถุดิบคุณภาพดีที่สุด
                 </p>
                 <p>
-                  เราภูมิใจที่ได้เป็นส่วนหนึ่งของโต๊ะอาหารครอบครัวไทยมานานกว่า 45 ปี 
-                  และจะยังคงมุ่งมั่นสร้างสรรค์ความอร่อยต่อไปในอนาคต
+                  เราภูมิใจที่ได้เป็นส่วนหนึ่งของโต๊ะอาหารครอบครัวไทยมานานกว่า
+                  45 ปี และจะยังคงมุ่งมั่นสร้างสรรค์ความอร่อยต่อไปในอนาคต
                 </p>
               </div>
             </div>
@@ -138,7 +135,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center text-white">
-                <p className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</p>
+                <p className="text-4xl md:text-5xl font-bold mb-2">
+                  {stat.number}
+                </p>
                 <p className="text-white/80">{stat.label}</p>
               </div>
             ))}
@@ -166,7 +165,9 @@ export default function AboutPage() {
                 <div className="w-16 h-16 bg-[#8B1538]/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <value.icon className="w-8 h-8 text-[#8B1538]" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{value.title}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  {value.title}
+                </h3>
                 <p className="text-muted-foreground">{value.description}</p>
               </div>
             ))}
@@ -197,11 +198,12 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  โรงงานผลิตของเราได้รับการรับรองมาตรฐาน GMP และ HACCP 
+                  โรงงานผลิตของเราได้รับการรับรองมาตรฐาน GMP และ HACCP
                   มั่นใจได้ในความสะอาดและปลอดภัยในทุกขั้นตอนการผลิต
                 </p>
                 <p>
-                  เราใช้เครื่องจักรที่ทันสมัย ควบคู่กับการควบคุมคุณภาพโดยผู้เชี่ยวชาญ 
+                  เราใช้เครื่องจักรที่ทันสมัย
+                  ควบคู่กับการควบคุมคุณภาพโดยผู้เชี่ยวชาญ
                   เพื่อให้ได้ลูกชิ้นที่มีคุณภาพสม่ำเสมอในทุกชิ้น
                 </p>
               </div>
@@ -250,7 +252,9 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold text-foreground mb-2">
                     {milestone.title}
                   </h3>
-                  <p className="text-muted-foreground">{milestone.description}</p>
+                  <p className="text-muted-foreground">
+                    {milestone.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -276,5 +280,5 @@ export default function AboutPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

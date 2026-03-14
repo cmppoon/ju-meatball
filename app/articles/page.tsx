@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import type { Metadata } from "next"
+import { HeroSection } from "@/components/hero-section"
 
 export const metadata: Metadata = {
   title: "บทความ - ลูกชิ้นรสโอชา | Articles",
@@ -75,15 +76,13 @@ const categories = ["ทั้งหมด", "ความรู้", "เคล
 export default function ArticlesPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="bg-[#8B1538] text-white py-16 md:py-24">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">บทความ</h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            อ่านบทความเกี่ยวกับลูกชิ้น สูตรอาหาร เคล็ดลับการทำอาหาร และความรู้ที่น่าสนใจ
-          </p>
-        </div>
-      </section>
+      <HeroSection
+        title="บทความ"
+        subtitle="อ่านบทความเกี่ยวกับลูกชิ้น สูตรอาหาร และเคล็ดลับการทำอาหารจากลูกชิ้นรสโอชา"
+        imageSrc="/images/hero.jpg"
+        imageAlt="บทความลูกชิ้นรสโอชา"
+        className="bg-[#8B1538]"
+      />
 
       {/* Categories */}
       <section className="py-8 border-b border-border">
@@ -156,31 +155,6 @@ export default function ArticlesPage() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Newsletter Section */}
-      <section className="py-16 bg-[#8B1538]">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            รับข่าวสารและบทความใหม่
-          </h2>
-          <p className="text-white/90 mb-8 max-w-xl mx-auto">
-            สมัครรับข่าวสารเพื่อไม่พลาดบทความใหม่ สูตรอาหาร และโปรโมชั่นพิเศษจากเรา
-          </p>
-          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="กรอกอีเมลของคุณ"
-              className="flex-1 px-5 py-3 rounded-full text-foreground bg-white focus:outline-none focus:ring-2 focus:ring-white/50"
-            />
-            <button
-              type="submit"
-              className="bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-black/80 transition-colors"
-            >
-              สมัครรับข่าวสาร
-            </button>
-          </form>
         </div>
       </section>
     </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { HeroSection } from "@/components/hero-section";
 
 export const metadata: Metadata = {
   title: "ติดต่อเรา - ลูกชิ้นรสโอชา | Contact Us",
@@ -37,16 +38,13 @@ const contactInfo = [
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="bg-[#8B1538] text-white py-16 md:py-24">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">ติดต่อเรา</h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            สนใจสั่งซื้อสินค้าหรือมีคำถาม ติดต่อเราได้ทุกช่องทาง
-            เรายินดีให้บริการ
-          </p>
-        </div>
-      </section>
+      <HeroSection 
+        title="ติดต่อเรา"
+        subtitle="สนใจสั่งซื้อสินค้าหรือมีคำถาม ติดต่อเราได้ทุกช่องทาง เรายินดีให้บริการ"
+        imageSrc="/images/hero.jpg"
+        imageAlt="ติดต่อเรา - ลูกชิ้นรสโอชา"
+        className="bg-[#8B1538]"
+      />
 
       {/* Contact Info Cards */}
       <section className="py-16">
