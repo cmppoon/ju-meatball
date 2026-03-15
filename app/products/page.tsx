@@ -56,7 +56,7 @@ export default function ProductsPage() {
         className="bg-black-theme"
       />
 
-      <section className="bg-gray-50 py-24 lg:py-32">
+      <section className="bg-gray-50 py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {products.map((product) => (
@@ -64,7 +64,7 @@ export default function ProductsPage() {
                 key={product.id}
                 className="group hover:border-maroon-theme flex flex-col border-2 border-gray-200 bg-white transition-all duration-300"
               >
-                <div className="group-hover:border-maroon-theme relative aspect-square overflow-hidden border-b-2 border-gray-200 transition-colors duration-300">
+                <div className="group-hover:border-maroon-theme relative aspect-square overflow-hidden border-b-2 border-gray-200 transition-colors duration-300 group-hover:border-b-gray-200">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -93,12 +93,12 @@ export default function ProductsPage() {
                     ))}
                   </ul>
 
-                  <Button
-                    asChild
-                    className="bg-black-theme hover:bg-maroon-theme w-full rounded-none px-6 py-6 text-base font-bold tracking-wide text-white transition-all duration-300"
+                  <Link
+                    href="/contact"
+                    className="bg-maroon-theme hover:bg-maroon-theme/80 inline-flex items-center gap-2 px-6 py-3 font-bold tracking-wider text-white uppercase transition-colors active:scale-95 justify-center"
                   >
-                    <Link href="/contact">สั่งซื้อเลย</Link>
-                  </Button>
+                    <span>สั่งซื้อเลย</span>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -120,7 +120,7 @@ export default function ProductsPage() {
           </p>
           <Link
             href="/contact"
-            className="bg-maroon-theme inline-flex items-center justify-center rounded-none px-12 py-6 text-xl font-bold tracking-wide text-white transition-all hover:bg-maroon-theme/80 active:scale-95"
+            className="bg-maroon-theme hover:bg-maroon-theme/80 inline-flex items-center justify-center rounded-none px-12 py-6 text-xl font-bold tracking-wide text-white transition-all active:scale-95"
           >
             ติดต่อฝ่ายขาย
           </Link>

@@ -3,6 +3,8 @@ import { Award, Users, Heart, Clock } from "lucide-react";
 
 import Image from "next/image";
 import { HeroSection } from "@/components/hero-section";
+import Stats from "@/components/stats";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "เกี่ยวกับเรา - ลูกชิ้นรสโอชา | About Us",
@@ -64,13 +66,6 @@ const values = [
   },
 ];
 
-const stats = [
-  { number: "45+", label: "ปีแห่งประสบการณ์" },
-  { number: "50+", label: "พนักงาน" },
-  { number: "1M+", label: "ลูกค้าที่ไว้วางใจ" },
-  { number: "20+", label: "ผลิตภัณฑ์" },
-];
-
 export default function AboutPage() {
   return (
     <div className="bg-background min-h-screen">
@@ -82,17 +77,17 @@ export default function AboutPage() {
       />
 
       {/* Story Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <span className="text-sm font-semibold tracking-wider text-[#8B1538] uppercase">
+              <span className="text-dark-maroon-theme mb-4 block text-sm font-bold tracking-[0.3em] uppercase lg:text-lg">
                 เรื่องราวของเรา
               </span>
-              <h2 className="text-foreground mt-2 mb-6 text-3xl font-bold md:text-4xl">
+              <h2 className="text-black-theme mb-8 text-4xl leading-tight font-extrabold lg:text-5xl">
                 จากครัวเล็กๆ สู่ความอร่อยระดับประเทศ
               </h2>
-              <div className="text-muted-foreground space-y-4 leading-relaxed">
+              <div className="space-y-6 text-lg leading-relaxed text-gray-600">
                 <p>
                   ลูกชิ้นรสโอชา เริ่มต้นจากความรักในการทำอาหารของคุณยายในปี 1978
                   ด้วยสูตรลับที่สืบทอดมาจากรุ่นสู่รุ่น
@@ -112,7 +107,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="relative h-[400px] overflow-hidden rounded-2xl shadow-2xl">
+              <div className="relative h-100 overflow-hidden rounded-none shadow-2xl">
                 <Image
                   src="/images/about-tradition.jpg"
                   alt="ประเพณีการทำลูกชิ้น"
@@ -120,7 +115,7 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 rounded-xl bg-maroon-theme p-6 text-white shadow-xl">
+              <div className="bg-maroon-theme absolute -bottom-6 -left-6 rounded-none p-6 text-white shadow-xl">
                 <p className="text-4xl font-bold">45+</p>
                 <p className="text-sm">ปีแห่งความอร่อย</p>
               </div>
@@ -130,29 +125,18 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-maroon-theme py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center text-white">
-                <p className="mb-2 text-4xl font-bold md:text-5xl">
-                  {stat.number}
-                </p>
-                <p className="text-white/80">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+      <section className="bg-maroon-theme py-8">
+        <Stats />
       </section>
 
       {/* Values Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
-            <span className="text-sm font-semibold tracking-wider text-[#8B1538] uppercase">
+            <span className="text-dark-maroon-theme mb-4 block text-sm font-bold tracking-[0.3em] uppercase lg:text-lg">
               คุณค่าของเรา
             </span>
-            <h2 className="text-foreground mt-2 text-3xl font-bold md:text-4xl">
+            <h2 className="text-black-theme text-4xl leading-tight font-extrabold lg:text-5xl">
               สิ่งที่เรายึดมั่น
             </h2>
           </div>
@@ -160,15 +144,17 @@ export default function AboutPage() {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-card rounded-2xl p-8 text-center shadow-lg transition-shadow hover:shadow-xl"
+                className="group hover:border-maroon-theme hover:bg-maroon-theme border-2 border-gray-200 bg-white p-8 text-center transition-all duration-300"
               >
-                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-maroon-theme/10">
+                <div className="mx-auto flex h-20 w-20 items-center justify-center">
                   <value.icon className="h-8 w-8 text-[#8B1538]" />
                 </div>
-                <h3 className="text-foreground mb-3 text-xl font-bold">
+                <h3 className="mt-8 text-2xl font-extrabold text-gray-900 transition-colors duration-300 group-hover:text-white">
                   {value.title}
                 </h3>
-                <p className="text-muted-foreground">{value.description}</p>
+                <p className="mt-4 text-base leading-relaxed text-gray-600 transition-colors duration-300 group-hover:text-white/90">
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>
@@ -176,11 +162,11 @@ export default function AboutPage() {
       </section>
 
       {/* Factory Section */}
-      <section className="bg-muted py-16 md:py-24">
+      <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="order-2 lg:order-1">
-              <div className="relative h-[400px] overflow-hidden rounded-2xl shadow-2xl">
+              <div className="relative h-100 overflow-hidden rounded-none">
                 <Image
                   src="/images/about-factory.jpg"
                   alt="โรงงานผลิตลูกชิ้นรสโอชา"
@@ -190,10 +176,10 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <span className="text-sm font-semibold tracking-wider text-[#8B1538] uppercase">
+              <span className="text-dark-maroon-theme mb-4 block text-sm font-bold tracking-[0.3em] uppercase lg:text-lg">
                 โรงงานของเรา
               </span>
-              <h2 className="text-foreground mt-2 mb-6 text-3xl font-bold md:text-4xl">
+              <h2 className="text-black-theme text-4xl leading-tight font-extrabold lg:text-5xl">
                 มาตรฐานการผลิตระดับสากล
               </h2>
               <div className="text-muted-foreground space-y-4 leading-relaxed">
@@ -227,13 +213,13 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-16 md:py-24">
+      <section className="bg-slate-50-theme/15 py-16">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
-            <span className="text-sm font-semibold tracking-wider text-[#8B1538] uppercase">
+            <span className="text-dark-maroon-theme mb-4 block text-sm font-bold tracking-[0.3em] uppercase lg:text-lg">
               เส้นทางของเรา
             </span>
-            <h2 className="text-foreground mt-2 text-3xl font-bold md:text-4xl">
+            <h2 className="text-black-theme text-4xl leading-tight font-extrabold lg:text-5xl">
               ประวัติและพัฒนาการ
             </h2>
           </div>
@@ -241,11 +227,11 @@ export default function AboutPage() {
             {milestones.map((milestone, index) => (
               <div key={index} className="mb-8 flex gap-6 last:mb-0">
                 <div className="flex flex-col items-center">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-maroon-theme text-sm font-bold text-white">
+                  <div className="bg-maroon-theme flex h-16 w-16 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white">
                     {milestone.year}
                   </div>
                   {index < milestones.length - 1 && (
-                    <div className="mt-2 h-full w-0.5 bg-maroon-theme/20" />
+                    <div className="bg-maroon-theme/20 mt-2 h-full w-0.5" />
                   )}
                 </div>
                 <div className="pb-8">
@@ -268,15 +254,17 @@ export default function AboutPage() {
           <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
             พร้อมลิ้มรสความอร่อย?
           </h2>
-          <p className="mx-auto mb-8 max-w-xl text-white/90">
+          <p className="mx-auto mb-4 max-w-xl text-white/90">
             ติดต่อเราวันนี้เพื่อสั่งซื้อลูกชิ้นคุณภาพ หรือสอบถามข้อมูลเพิ่มเติม
           </p>
-          <a
+          <Link
             href="/contact"
-            className="inline-block rounded-full bg-white px-8 py-4 font-semibold text-[#8B1538] transition-colors hover:bg-white/90"
+            className="group mt-8 inline-flex h-12 items-center justify-center border-2 border-white bg-transparent px-10 py-5 transition-all hover:bg-white active:scale-95"
           >
-            ติดต่อเรา
-          </a>
+            <span className="group-hover:text-maroon-theme text-lg font-bold tracking-wide text-white transition-colors">
+              ติดต่อเรา
+            </span>
+          </Link>
         </div>
       </section>
     </div>

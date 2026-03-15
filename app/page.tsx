@@ -2,6 +2,7 @@ import { MarqueeBanner } from "@/components/marquee-banner";
 import { ProductSlider } from "@/components/product-slider";
 import { ScrollLink } from "@/components/scrollToLinkBtn";
 import Services from "@/components/services";
+import Stats from "@/components/stats";
 import WhyChooseUs from "@/components/whyChooseUs";
 import { ArrowRight, Award, Clock, Heart, Users } from "lucide-react";
 import Image from "next/image";
@@ -28,13 +29,6 @@ const features = [
     title: "ลูกค้าไว้วางใจ",
     description: "ให้บริการลูกค้ามากกว่า 10,000 ราย",
   },
-];
-
-const stats = [
-  { number: "45+", label: "ปีแห่งประสบการณ์" },
-  { number: "50+", label: "พนักงานมืออาชีพ" },
-  { number: "1M+", label: "ลูกค้าทั่วประเทศ" },
-  { number: "20+", label: "ผลิตภัณฑ์คุณภาพ" },
 ];
 
 export default function HomePage() {
@@ -66,14 +60,13 @@ export default function HomePage() {
               </div>
 
               <h1 className="mb-4 text-white md:mb-6">
-                <span className="block text-5xl leading-none font-extrabold tracking-tight sm:text-6xl md:text-8xl lg:text-9xl">
+                <span className="mr-3 inline-block text-5xl leading-none font-extrabold tracking-tight sm:text-6xl md:mr-4 md:text-8xl lg:mr-0 lg:block lg:text-9xl">
                   ลูกชิ้น
                 </span>
-                <span className="text-maroon-theme block text-5xl leading-tight font-extrabold tracking-tight sm:text-6xl md:text-8xl lg:text-9xl">
+                <span className="text-maroon-theme inline-block text-5xl leading-tight font-extrabold tracking-tight sm:text-6xl md:text-8xl lg:block lg:text-9xl">
                   รสโอชา
                 </span>
               </h1>
-
               <p className="mx-auto mb-6 max-w-md text-lg leading-relaxed text-white/70 md:mb-6 md:text-xl lg:mx-0">
                 ลูกชิ้นคุณภาพพรีเมียม สูตรดั้งเดิมกว่า 45 ปี
                 รสชาติที่คุณไว้วางใจ
@@ -102,7 +95,7 @@ export default function HomePage() {
             </div>
 
             {/* Right - Logo */}
-            <div className="hidden tems-center justify-center lg:order-last lg:flex">
+            <div className="tems-center hidden justify-center lg:order-last lg:flex">
               <div className="relative">
                 <div className="bg-maroon-theme/20 absolute -inset-8 rounded-full blur-3xl" />
                 <Image
@@ -118,22 +111,7 @@ export default function HomePage() {
         </div>
 
         {/* Bottom Stats Bar */}
-        <div className="bg-maroon-theme relative z-20 mt-auto w-full">
-          <div className="mx-auto max-w-7xl px-4 py-4 md:py-4 lg:px-8">
-            <div className="grid grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <p className="text-2xl font-extrabold tracking-tight text-white md:text-4xl">
-                    {stat.number}
-                  </p>
-                  <p className="mt-1 text-xs tracking-wider text-white/80 uppercase md:mt-2 md:text-sm">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <Stats />
       </section>
 
       <MarqueeBanner />

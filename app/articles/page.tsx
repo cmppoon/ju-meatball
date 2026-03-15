@@ -80,55 +80,59 @@ const articles = [
 
 export default function ArticlesPage() {
   return (
-    <div className="bg-background min-h-screen">
+    <div className="min-h-screen bg-white">
       <HeroSection
         title="บทความ"
         subtitle="อ่านบทความเกี่ยวกับลูกชิ้น สูตรอาหาร และเคล็ดลับการทำอาหารจากลูกชิ้นรสโอชา"
         imageSrc="/images/hero.jpg"
         imageAlt="บทความลูกชิ้นรสโอชา"
-        className="bg-maroon-theme"
+        className="bg-black-theme"
       />
 
       {/* Articles Grid */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {articles.map((article) => (
-              <article
-                key={article.id}
-                className="bg-card group overflow-hidden rounded-2xl shadow-lg transition-shadow hover:shadow-xl"
-              >
-                <Link href={`/articles/${article.slug}`}>
-                  <div className="relative h-52 overflow-hidden">
+              <article key={article.id} className="h-full">
+                <Link
+                  href={`/articles/${article.slug}`}
+                  className="group flex h-full flex-col border-2 border-gray-200 bg-white transition-all duration-300 hover:border-maroon-theme"
+                >
+                  <div className="relative aspect-4/3 w-full overflow-hidden border-b-2 border-gray-200 transition-colors duration-300 group-hover:border-maroon-theme group-hover:border-b-gray-200">
                     <Image
                       src={article.image}
                       alt={article.title}
                       fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute top-4 left-4">
-                      <span className="rounded-full bg-maroon-theme px-3 py-1 text-xs font-medium text-white">
+                    <div className="absolute left-4 top-4">
+                      {/* Blocky category badge */}
+                      <span className="bg-maroon-theme px-4 py-2 text-xs font-bold tracking-wider text-white uppercase">
                         {article.category}
                       </span>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <p className="text-muted-foreground mb-2 text-sm">
+                  
+                  {/* flex-1 ensures the "Read more" buttons align perfectly at the bottom */}
+                  <div className="flex flex-1 flex-col p-6 lg:p-8">
+                    <p className="mb-4 text-sm font-bold text-gray-500">
                       {article.date}
                     </p>
-                    <h2 className="text-foreground mb-2 text-xl font-bold transition-colors group-hover:text-[#8B1538]">
+                    <h2 className="mb-2 text-2xl font-extrabold text-black-theme transition-colors group-hover:text-maroon-theme">
                       {article.title}
                     </h2>
-                    <p className="text-muted-foreground mb-1 text-sm">
+                    <p className="mb-4 text-xs font-bold tracking-wider text-gray-400 uppercase">
                       {article.titleEn}
                     </p>
-                    <p className="text-muted-foreground mt-3 line-clamp-3">
+                    <p className="mb-8 flex-1 text-base leading-relaxed text-gray-600 line-clamp-3">
                       {article.excerpt}
                     </p>
-                    <div className="mt-4 flex items-center font-medium text-[#8B1538]">
+                    
+                    <div className="mt-auto flex items-center font-bold tracking-wide text-black-theme transition-colors group-hover:text-maroon-theme">
                       <span>อ่านต่อ</span>
                       <svg
-                        className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                        className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
