@@ -55,7 +55,7 @@ export default function HomePage() {
         </div>
 
         {/* Content Wrapper */}
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-4 py-12 md:py-20 lg:px-8">
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-4 py-8 md:py-20 lg:px-8">
           <div className="grid w-full items-center gap-8 md:gap-12 lg:mt-8 lg:grid-cols-2">
             {/* Left - Text */}
             <div className="space-y-6 text-center lg:text-left">
@@ -102,7 +102,7 @@ export default function HomePage() {
             </div>
 
             {/* Right - Logo */}
-            <div className="order-first flex items-center justify-center lg:order-last">
+            <div className="hidden tems-center justify-center lg:order-last lg:flex">
               <div className="relative">
                 <div className="bg-maroon-theme/20 absolute -inset-8 rounded-full blur-3xl" />
                 <Image
@@ -119,11 +119,11 @@ export default function HomePage() {
 
         {/* Bottom Stats Bar */}
         <div className="bg-maroon-theme relative z-20 mt-auto w-full">
-          <div className="mx-auto max-w-7xl px-4 py-6 md:py-4 lg:px-8">
-            <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
+          <div className="mx-auto max-w-7xl px-4 py-4 md:py-4 lg:px-8">
+            <div className="grid grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <p className="text-3xl font-extrabold tracking-tight text-white md:text-4xl">
+                  <p className="text-2xl font-extrabold tracking-tight text-white md:text-4xl">
                     {stat.number}
                   </p>
                   <p className="mt-1 text-xs tracking-wider text-white/80 uppercase md:mt-2 md:text-sm">
@@ -242,7 +242,6 @@ export default function HomePage() {
 
       {/* Services Section */}
       <Services />
-
 
       {/* Products Section */}
       <ProductSlider />

@@ -18,7 +18,7 @@ export function MarqueeBanner() {
         {repeatedMessages.map((message, index) => (
           <span key={index} className="mx-8 flex items-center gap-3">
             <span className="text-2xl text-[#D4A853]">&#x2022;</span>
-            <span className="text-lg font-extrabold tracking-[0.2em] text-white uppercase">
+            <span className="text-md font-extrabold tracking-[0.2em] text-white uppercase">
               {message}
             </span>
           </span>
