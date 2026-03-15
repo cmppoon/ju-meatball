@@ -1,12 +1,9 @@
 "use client";
 
-import Link from "next/link";
+import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
-import { useState, useRef, useEffect } from "react";
-import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
-
-// Note: Ensure your Button import path is correct for your project
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 const navigation = [
   { name: "หน้าหลัก", href: "/" },
@@ -31,6 +28,11 @@ const services = [
     name: "แฟรนไชส์",
     href: "/services/franchise",
     description: "โอกาสธุรกิจแฟรนไชส์ลูกชิ้น",
+  },
+  {
+    name: "ร้านอาหาร",
+    href: "/contact",
+    description: "โอกาสธุรกิจร้านอาหารลูกชิ้น",
   },
 ];
 
@@ -64,7 +66,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${scrolled ? "bg-[#0A0A0A] shadow-xl" : "bg-transparent"}`}
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${scrolled ? "bg-black-theme shadow-xl" : "bg-transparent"}`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
         <Link href="/" className="group flex items-center gap-4">
@@ -108,7 +110,7 @@ export function Header() {
 
             {servicesOpen && (
               <div className="absolute top-full left-0 mt-4 w-80 overflow-hidden bg-white shadow-2xl">
-                <div className="bg-[#8B1A1A] px-6 py-4">
+                <div className="bg-maroon-theme px-6 py-4">
                   <p className="text-sm font-bold tracking-wider text-white uppercase">
                     บริการของเรา
                   </p>
@@ -121,11 +123,11 @@ export function Header() {
                       className="group flex items-center gap-4 px-6 py-4 transition-all hover:bg-gray-50"
                       onClick={() => setServicesOpen(false)}
                     >
-                      <div className="flex h-10 w-10 items-center justify-center bg-[#0A0A0A] text-sm font-bold text-white transition-colors group-hover:bg-[#8B1A1A]">
+                      <div className="group-hover:bg-maroon-theme flex h-10 w-10 items-center justify-center bg-[#0A0A0A] text-sm font-bold text-white transition-colors">
                         {String(index + 1).padStart(2, "0")}
                       </div>
                       <div>
-                        <p className="font-bold text-[#0A0A0A] transition-colors group-hover:text-[#8B1A1A]">
+                        <p className="text-black-theme group-hover:text-maroon-theme font-bold transition-colors">
                           {service.name}
                         </p>
                         <p className="text-xs text-gray-500">
@@ -151,10 +153,9 @@ export function Header() {
         </div>
 
         <div className="hidden lg:block">
-          {/* Changed Button to use Link directly like we did in the hero section for consistency */}
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-[#8B1A1A] px-6 py-3 font-bold tracking-wider text-white uppercase transition-colors hover:bg-[#A52020] active:scale-95"
+            className="bg-maroon-theme hover:bg-maroon-theme/80 inline-flex items-center gap-2 px-6 py-3 font-bold tracking-wider text-white uppercase transition-colors active:scale-95"
           >
             สั่งซื้อ
             <ArrowRight className="h-4 w-4" />
@@ -210,7 +211,7 @@ export function Header() {
                       className="flex items-center gap-3 py-2 text-white/60 transition-colors hover:text-white"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      <span className="font-bold text-[#8B1A1A]">
+                      <span className="text-maroon-theme font-bold">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       {service.name}
@@ -233,7 +234,7 @@ export function Header() {
             <div className="pt-6">
               <Link
                 href="/contact"
-                className="flex w-full items-center justify-center bg-[#8B1A1A] py-4 font-bold tracking-wider text-white uppercase transition-colors hover:bg-[#A52020] active:scale-95"
+                className="bg-maroon-theme hover:bg-maroon-theme/80 flex w-full items-center justify-center py-4 font-bold tracking-wider text-white uppercase transition-colors active:scale-95"
               >
                 สั่งซื้อเลย
               </Link>

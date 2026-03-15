@@ -2,169 +2,110 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"; // Update this path to match your structure
 
 const products = [
   {
     id: 1,
     name: "ลูกชิ้นหมู",
     image: "/images/product-1.jpg",
-    description:
-      "ลูกชิ้นหมูแท้ 100% เนื้อแน่น กรอบนอกนุ่มใน รสชาติกลมกล่อมถูกใจทุกคน",
-    number: "01",
   },
   {
     id: 2,
     name: "ลูกชิ้นเนื้อ",
     image: "/images/product-2.jpg",
-    description: "ลูกชิ้นเนื้อวัวคัดพิเศษ รสชาติเข้มข้น หอมกลิ่นเนื้อแท้ๆ",
-    number: "02",
   },
   {
     id: 3,
     name: "ลูกชิ้นปลา",
     image: "/images/product-3.jpg",
-    description: "ลูกชิ้นปลาสดใหม่ เนื้อเด้งกรุบกรอบ ไขมันต่ำ",
-    number: "03",
   },
   {
     id: 4,
     name: "ลูกชิ้นไก่",
     image: "/images/product-4.jpg",
-    description: "ลูกชิ้นไก่เนื้อดี ไขมันต่ำ ดีต่อสุขภาพ เหมาะสำหรับทุกวัย",
-    number: "04",
   },
 ];
 
 export function ProductSlider() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    if (isHovered) return;
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % products.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [isHovered]);
-
-  const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev - 1 + products.length) % products.length);
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % products.length);
-  };
-
   return (
-    <section className="bg-white py-24 lg:py-32">
+    <section className="bg-white py-16">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        {/* Header */}
-        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <span className="text-sm font-bold tracking-[0.3em] text-[#8B1A1A] uppercase">
-              สินค้าของเรา
-            </span>
-            <h2 className="mt-4 text-5xl leading-tight font-extrabold text-[#0A0A0A] lg:text-6xl">
-              ลูกชิ้น<span className="text-[#8B1A1A]">คุณภาพ</span>
-            </h2>
-          </div>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={goToPrevious}
-              className="flex h-14 w-14 items-center justify-center border-2 border-[#0A0A0A] transition-colors hover:bg-[#0A0A0A] hover:text-white"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-            <button
-              onClick={goToNext}
-              className="flex h-14 w-14 items-center justify-center border-2 border-[#0A0A0A] transition-colors hover:bg-[#0A0A0A] hover:text-white"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
-          </div>
-        </div>
-
-        {/* Slider */}
-        <div
-          className="relative overflow-hidden"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+        {/* We wrap everything in the Carousel so the buttons in the header can control it */}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true, // Allows infinite scrolling
+          }}
+          plugins={[
+            Autoplay({
+              delay: 4000, // Slides every 4 seconds
+              stopOnInteraction: true, // Pauses if the user interacts with it
+            }),
+          ]}
+          className="w-full"
         >
-          <div
-            className="flex transition-transform duration-700 ease-out"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-          >
-            {products.map((product) => (
-              <div key={product.id} className="w-full flex-shrink-0">
-                <div className="grid gap-0 lg:grid-cols-2">
-                  {/* Image */}
-                  <div className="relative aspect-square overflow-hidden bg-gray-100 lg:aspect-auto lg:h-[600px]">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-cover"
-                    />
-                    {/* Number overlay */}
-                    <div className="absolute bottom-8 left-8">
-                      <span className="text-9xl font-extrabold text-white/20">
-                        {product.number}
-                      </span>
-                    </div>
-                  </div>
+          {/* Header */}
+          <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <span className="text-dark-maroon-theme text-sm font-bold tracking-[0.3em] uppercase lg:text-lg">
+                สินค้าของเรา
+              </span>
+              <h2 className="text-black-theme mt-4 text-5xl leading-tight font-extrabold lg:mt-8 lg:text-6xl">
+                ลูกชิ้น<span className="text-maroon-theme">คุณภาพ</span>
+              </h2>
+            </div>
 
-                  {/* Content */}
-                  <div className="flex flex-col justify-center bg-[#0A0A0A] p-12 lg:p-16">
-                    <div className="mb-4 text-sm font-bold tracking-[0.3em] text-[#8B1A1A] uppercase">
-                      Product {product.number}
-                    </div>
-                    <h3 className="mb-6 text-4xl font-extrabold text-white lg:text-5xl">
+            {/* Navigation Buttons (Overriding absolute positioning to sit in the header) */}
+            <div className="flex items-center gap-4">
+              <CarouselPrevious className="static h-14 w-14 translate-x-0 translate-y-0 rounded-none border-2 border-black bg-transparent text-black transition-colors hover:border-[#8B1A1A] hover:bg-maroon-theme hover:text-white" />
+              <CarouselNext className="static h-14 w-14 translate-x-0 translate-y-0 rounded-none border-2 border-black bg-transparent text-black transition-colors hover:border-[#8B1A1A] hover:bg-maroon-theme hover:text-white" />
+            </div>
+          </div>
+
+          {/* Slider Content */}
+          <CarouselContent className="-ml-4">
+            {products.map((product) => (
+              <CarouselItem
+                key={product.id}
+                className="pl-4 md:basis-1/2 lg:basis-1/3"
+              >
+                {/* Card Container */}
+                <div className="group relative aspect-square w-full overflow-hidden bg-gray-100 lg:aspect-[4/5]">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  {/* Gradient Overlay for Text Readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300" />
+
+                  {/* Product Name */}
+                  <div className="absolute right-0 bottom-0 left-0 flex items-center justify-center p-8">
+                    <h3 className="text-3xl font-extrabold tracking-wide text-white drop-shadow-lg lg:text-4xl">
                       {product.name}
                     </h3>
-                    <p className="mb-10 text-lg leading-relaxed text-white/60">
-                      {product.description}
-                    </p>
-                    <Button
-                      asChild
-                      className="w-fit rounded-none bg-[#8B1A1A] px-8 py-6 text-lg font-bold text-white hover:bg-[#A52020]"
-                    >
-                      <Link href="/contact" className="flex items-center gap-2">
-                        สั่งซื้อ
-                        <ArrowRight className="h-5 w-5" />
-                      </Link>
-                    </Button>
                   </div>
                 </div>
-              </div>
+              </CarouselItem>
             ))}
-          </div>
-        </div>
-
-        {/* Progress bar */}
-        <div className="mt-8 flex gap-2">
-          {products.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className="h-1 flex-1 overflow-hidden bg-gray-200"
-            >
-              <div
-                className={`h-full bg-[#8B1A1A] transition-all duration-500 ${
-                  index === currentIndex ? "w-full" : "w-0"
-                }`}
-              />
-            </button>
-          ))}
-        </div>
+          </CarouselContent>
+        </Carousel>
 
         {/* View all link */}
         <div className="mt-12 text-center">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 font-bold tracking-wider text-[#0A0A0A] uppercase transition-colors hover:text-[#8B1A1A]"
+            className="text-black-theme inline-flex items-center gap-2 font-bold tracking-wider uppercase transition-colors hover:text-maroon-theme"
           >
             ดูสินค้าทั้งหมด
             <ArrowRight className="h-5 w-5" />

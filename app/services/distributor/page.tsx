@@ -70,7 +70,7 @@ export default function DistributorPage() {
         subtitle="โอกาสทางธุรกิจที่ดี กับแบรนด์ลูกชิ้นคุณภาพที่คนไทยไว้วางใจมากว่า 45 ปี"
         imageSrc="/images/hero.jpg"
         imageAlt="ตัวแทนจำหน่ายลูกชิ้นรสโอชา"
-        className="bg-[#8B1A1A]"
+        className="bg-maroon-theme"
       />
 
       {/* Benefits Section */}
@@ -85,8 +85,8 @@ export default function DistributorPage() {
                 key={benefit.title}
                 className="rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition-shadow hover:shadow-md"
               >
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#8B1A1A]/10">
-                  <benefit.icon className="h-7 w-7 text-[#8B1A1A]" />
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-maroon-theme/10">
+                  <benefit.icon className="h-7 w-7 text-maroon-theme" />
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-gray-900">
                   {benefit.title}
@@ -115,14 +115,14 @@ export default function DistributorPage() {
                 }`}
               >
                 {index === 0 && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#8B1A1A] px-4 py-1 text-xs font-medium text-white">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-maroon-theme px-4 py-1 text-xs font-medium text-white">
                     แนะนำ
                   </span>
                 )}
                 <h3 className="text-xl font-bold text-gray-900">
                   {level.name}
                 </h3>
-                <p className="mt-2 text-2xl font-bold text-[#8B1A1A]">
+                <p className="mt-2 text-2xl font-bold text-maroon-theme">
                   {level.discount}
                 </p>
                 <p className="text-sm text-gray-500">
@@ -167,7 +167,7 @@ export default function DistributorPage() {
               <ul className="mt-8 space-y-4">
                 {requirements.map((req) => (
                   <li key={req} className="flex items-start gap-3">
-                    <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#8B1A1A]" />
+                    <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-maroon-theme" />
                     <span className="text-gray-700">{req}</span>
                   </li>
                 ))}
@@ -178,7 +178,7 @@ export default function DistributorPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#8B1A1A] py-16">
+      <section className="bg-maroon-theme py-16">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white">
             สนใจเป็นตัวแทนจำหน่าย?
@@ -189,7 +189,7 @@ export default function DistributorPage() {
           <Button
             asChild
             size="lg"
-            className="mt-8 bg-white text-[#8B1A1A] hover:bg-white/90"
+            className="mt-8 bg-white text-maroon-theme hover:bg-white/90"
           >
             <Link href="/contact">สมัครเป็นตัวแทน</Link>
           </Button>

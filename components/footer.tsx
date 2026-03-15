@@ -23,30 +23,14 @@ const navigation = {
     { name: "OEM", href: "/services/oem" },
     { name: "ตัวแทนจำหน่าย", href: "/services/distributor" },
     { name: "แฟรนไชส์", href: "/services/franchise" },
+    { name: "ร้านอาหาร", href: "/contact" },
   ],
 };
 
 export function Footer() {
   return (
-    <footer className="bg-[#0A0A0A] text-white">
-      {/* Top bar */}
-      <div className="bg-[#8B1A1A] py-6">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-xl font-bold tracking-wider uppercase">
-              พร้อมสั่งซื้อ?
-            </p>
-            <Link
-              href="/contact"
-              className="bg-white px-8 py-3 font-bold tracking-wider text-[#8B1A1A] uppercase transition-colors hover:bg-[#0A0A0A] hover:text-white"
-            >
-              ติดต่อเราเลย
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+    <footer className="bg-black-theme text-white">
+      <div className="mx-auto max-w-7xl px-4 py-16 pb-4 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           {/* Brand */}
           <div className="space-y-6 lg:col-span-4">
@@ -60,9 +44,6 @@ export function Footer() {
               />
               <div>
                 <p className="text-2xl font-extrabold">ลูกชิ้นรสโอชา</p>
-                <p className="text-sm tracking-[0.2em] text-white/50 uppercase">
-                  Since 1978
-                </p>
               </div>
             </div>
             <p className="leading-relaxed text-white/60">
@@ -72,13 +53,13 @@ export function Footer() {
             <div className="flex gap-3">
               <a
                 href="#"
-                className="flex h-12 w-12 items-center justify-center border-2 border-white/20 transition-all hover:border-[#8B1A1A] hover:bg-[#8B1A1A]"
+                className="hover:border-maroon-theme hover:bg-maroon-theme flex h-12 w-12 items-center justify-center border-2 border-white/20 transition-all"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
                 href="#"
-                className="flex h-12 w-12 items-center justify-center border-2 border-white/20 transition-all hover:border-[#8B1A1A] hover:bg-[#8B1A1A]"
+                className="hover:border-maroon-theme hover:bg-maroon-theme flex h-12 w-12 items-center justify-center border-2 border-white/20 transition-all"
               >
                 <Instagram className="h-5 w-5" />
               </a>
@@ -99,7 +80,7 @@ export function Footer() {
 
           {/* Links */}
           <div className="lg:col-span-2">
-            <h3 className="mb-6 text-sm font-bold tracking-[0.2em] text-[#8B1A1A] uppercase">
+            <h3 className="mb-6 text-sm font-bold tracking-[0.2em] text-white uppercase">
               ลิงก์ด่วน
             </h3>
             <ul className="space-y-4">
@@ -118,7 +99,7 @@ export function Footer() {
 
           {/* Services */}
           <div className="lg:col-span-2">
-            <h3 className="mb-6 text-sm font-bold tracking-[0.2em] text-[#8B1A1A] uppercase">
+            <h3 className="mb-6 text-sm font-bold tracking-[0.2em] text-white uppercase">
               บริการ
             </h3>
             <ul className="space-y-4">
@@ -137,24 +118,24 @@ export function Footer() {
 
           {/* Contact */}
           <div className="lg:col-span-4">
-            <h3 className="mb-6 text-sm font-bold tracking-[0.2em] text-[#8B1A1A] uppercase">
+            <h3 className="mb-6 text-sm font-bold tracking-[0.2em] text-white uppercase">
               ติดต่อเรา
             </h3>
             <ul className="space-y-4">
               <li className="flex items-center gap-4">
-                <div className="flex h-10 w-10 items-center justify-center bg-[#8B1A1A]">
+                <div className="bg-maroon-theme flex h-10 w-10 items-center justify-center">
                   <Phone className="h-4 w-4" />
                 </div>
                 <span className="text-white/80">02-XXX-XXXX</span>
               </li>
               <li className="flex items-center gap-4">
-                <div className="flex h-10 w-10 items-center justify-center bg-[#8B1A1A]">
+                <div className="bg-maroon-theme flex h-10 w-10 items-center justify-center">
                   <Mail className="h-4 w-4" />
                 </div>
                 <span className="text-white/80">info@lukchinocha.com</span>
               </li>
               <li className="flex items-center gap-4">
-                <div className="flex h-10 w-10 items-center justify-center bg-[#8B1A1A]">
+                <div className="bg-maroon-theme flex h-10 w-10 items-center justify-center">
                   <MapPin className="h-4 w-4" />
                 </div>
                 <span className="text-white/80">123 ถนนราชดำเนิน กรุงเทพฯ</span>
@@ -163,17 +144,18 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="my-12 h-px bg-white/10" />
-
+        <div className="mt-12 mb-4 h-px bg-white/10" />
         {/* Bottom section */}
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="text-sm text-white/40">
+        <div className="relative flex w-full items-center justify-center gap-4">
+          <div className="hidden w-12 sm:block"></div>
+
+          <p className="flex-1 text-center text-sm text-white/40">
             © {new Date().getFullYear()} ลูกชิ้นรสโอชา. สงวนลิขสิทธิ์ทั้งหมด.
           </p>
+
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex h-12 w-12 items-center justify-center border-2 border-white/20 transition-all hover:border-[#8B1A1A] hover:bg-[#8B1A1A]"
+            className="hover:border-maroon-theme hover:bg-maroon-theme hidden h-12 w-12 shrink-0 items-center justify-center border-2 border-white/20 transition-all sm:relative sm:right-auto sm:flex"
           >
             <ArrowUp className="h-5 w-5" />
           </button>

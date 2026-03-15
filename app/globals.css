@@ -37,6 +37,11 @@
   --sidebar-accent-foreground: oklch(0.2 0.1 25);
   --sidebar-border: oklch(0.9 0 0);
   --sidebar-ring: oklch(0.35 0.15 25);
+  --dark-maroon-theme: #5d0000;
+  --marroon-theme: #890f02;
+  --dark-yellow-theme: #D4A853;
+  --light-yellow-theme: #ECD7A2;
+  --black-theme: #0a0a0a;
 }
 
 .dark {
@@ -114,6 +119,11 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-dark-maroon-theme: var(--dark-maroon-theme);
+  --color-maroon-theme: var(--marroon-theme);
+  --color-dark-yellow-theme: var(--dark-yellow-theme);
+  --color-light-yellow-theme: var(--light-yellow-theme);
+  --color-black-theme: var(--black-theme);
 }
 
 @layer base {
@@ -298,4 +308,12 @@
 ::selection {
   background: #8b1a1a;
   color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 5rem; 
 }

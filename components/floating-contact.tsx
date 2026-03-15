@@ -1,7 +1,7 @@
 "use client";
 
+import { Phone, X } from "lucide-react";
 import { useState } from "react";
-import { Phone, MessageCircle, X } from "lucide-react";
 
 export function FloatingContact() {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,14 +80,14 @@ export function FloatingContact() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all duration-300 ${
-          isOpen ? "bg-black" : "bg-[#8B1538]"
+          isOpen ? "bg-black" : "bg-[#25D366]"
         } hover:scale-110`}
         aria-label={isOpen ? "Close contact menu" : "Open contact menu"}
       >
         {isOpen ? (
           <X className="h-6 w-6 text-white" />
         ) : (
-          <MessageCircle className="h-6 w-6 text-white" />
+          <Phone className="h-6 w-6 text-white" />
         )}
       </button>
     </div>

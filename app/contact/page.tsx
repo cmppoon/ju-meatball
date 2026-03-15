@@ -43,36 +43,50 @@ export default function ContactPage() {
         subtitle="สนใจสั่งซื้อสินค้าหรือมีคำถาม ติดต่อเราได้ทุกช่องทาง เรายินดีให้บริการ"
         imageSrc="/images/hero.jpg"
         imageAlt="ติดต่อเรา - ลูกชิ้นรสโอชา"
-        className="bg-[#8B1538]"
+        className="bg-maroon-theme"
       />
 
       {/* Contact Info Cards */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="mb-16 text-center">
+            <span className="text-dark-maroon-theme mb-4 block text-sm font-bold tracking-[0.3em] uppercase lg:text-lg">
+              ช่องทางการติดต่อ
+            </span>
+            <h2 className="text-black-theme text-4xl leading-tight font-extrabold lg:text-5xl">
+              ยินดีให้บริการ<span className="text-maroon-theme">ทุกวัน</span>
+            </h2>
+          </div>
+
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {contactInfo.map((info, index) => (
               <div
                 key={index}
-                className="bg-card rounded-2xl p-6 text-center shadow-lg transition-shadow hover:shadow-xl"
+                className="group hover:border-maroon-theme flex flex-col items-center border-2 border-gray-200 bg-white p-8 text-center transition-all duration-300"
               >
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#8B1538]/10">
-                  <info.icon className="h-7 w-7 text-[#8B1538]" />
+                <div className="mb-6 flex h-20 w-20 items-center justify-center">
+                  <info.icon className="text-maroon-theme h-8 w-8" />
                 </div>
-                <h3 className="text-foreground mb-3 text-lg font-bold">
+
+                <h3 className="text-black-theme mb-4 text-xl font-extrabold">
                   {info.title}
                 </h3>
-                <div className="space-y-1">
+
+                <div className="flex flex-1 flex-col justify-center space-y-2">
                   {info.details.map((detail, idx) =>
                     info.link ? (
                       <a
                         key={idx}
                         href={info.link}
-                        className="text-muted-foreground block transition-colors hover:text-[#8B1538]"
+                        className="hover:text-maroon-theme text-base font-bold text-gray-600 transition-colors"
                       >
                         {detail}
                       </a>
                     ) : (
-                      <p key={idx} className="text-muted-foreground">
+                      <p
+                        key={idx}
+                        className="text-base font-bold text-gray-600"
+                      >
                         {detail}
                       </p>
                     ),
@@ -85,33 +99,40 @@ export default function ContactPage() {
       </section>
 
       {/* Map and Form Section */}
-      <section className="bg-muted py-16">
-        <div className="container mx-auto px-4">
-          {/* Map */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="flex flex-col">
-            <h2 className="text-foreground mb-6 text-2xl font-bold">แผนที่</h2>
-            <p className="text-muted-foreground">
-              123 ถนนสุขุมวิท แขวงคลองตัน เขตคลองเตย กรุงเทพมหานคร 10110
-            </p>
-            <a
-              href="https://maps.google.com/?q=13.7321,100.5673"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 font-medium text-[#8B1538] hover:underline"
-            >
-              <MapPin className="h-4 w-4" />
-              เปิดใน Google Maps
-            </a>
-            <div className="mt-6 min-h-[400px] flex-1 overflow-hidden rounded-2xl shadow-lg">
+            <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+              <div>
+                <h2 className="text-black-theme mb-2 text-4xl font-extrabold">
+                  แผนที่สาขาหลัก
+                </h2>
+                <p className="text-lg font-bold text-gray-600">
+                  123 ถนนสุขุมวิท แขวงคลองตัน เขตคลองเตย กรุงเทพมหานคร 10110
+                </p>
+              </div>
+              <a
+                href="https://maps.google.com/?q=13.7321,100.5673"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-black-theme bg-black-theme hover:text-black-theme flex items-center gap-2 border-2 px-6 py-3 font-bold tracking-wide text-white transition-all hover:bg-white"
+              >
+                <MapPin className="h-5 w-5" />
+                เปิดใน Google Maps
+              </a>
+            </div>
+
+            <div className="hover:border-maroon-theme min-h-[500px] w-full border-2 border-gray-200 bg-gray-50 p-2 transition-colors">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.7614973574407!2d100.56!3d13.73!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQzJzQ4LjAiTiAxMDDCsDMzJzM2LjAiRQ!5e0!3m2!1sen!2sth!4v1234567890"
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: "400px" }}
+                style={{ border: 0, minHeight: "480px" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="ลูกชิ้นรสโอชา - แผนที่"
+                className="bg-gray-200"
               />
             </div>
           </div>
@@ -119,12 +140,12 @@ export default function ContactPage() {
       </section>
 
       {/* Social Media Section */}
-      <section className="py-16">
+      <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-foreground mb-4 text-2xl font-bold md:text-3xl">
+          <h2 className="text-black-theme mb-2 text-4xl font-extrabold">
             ติดตามเราบนโซเชียลมีเดีย
           </h2>
-          <p className="text-muted-foreground mb-8">
+          <p className="text-lg font-bold text-gray-600 mb-8">
             ติดตามข่าวสาร โปรโมชั่น และเมนูใหม่ๆ ได้ทุกช่องทาง
           </p>
           <div className="flex justify-center gap-6">

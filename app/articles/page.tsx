@@ -78,15 +78,6 @@ const articles = [
   },
 ];
 
-const categories = [
-  "ทั้งหมด",
-  "ความรู้",
-  "เคล็ดลับ",
-  "สูตรอาหาร",
-  "สุขภาพ",
-  "วัฒนธรรม",
-];
-
 export default function ArticlesPage() {
   return (
     <div className="bg-background min-h-screen">
@@ -95,28 +86,8 @@ export default function ArticlesPage() {
         subtitle="อ่านบทความเกี่ยวกับลูกชิ้น สูตรอาหาร และเคล็ดลับการทำอาหารจากลูกชิ้นรสโอชา"
         imageSrc="/images/hero.jpg"
         imageAlt="บทความลูกชิ้นรสโอชา"
-        className="bg-[#8B1538]"
+        className="bg-maroon-theme"
       />
-
-      {/* Categories */}
-      <section className="border-border border-b py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((category, index) => (
-              <button
-                key={category}
-                className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${
-                  index === 0
-                    ? "bg-[#8B1538] text-white"
-                    : "bg-muted text-muted-foreground hover:bg-[#8B1538]/10 hover:text-[#8B1538]"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Articles Grid */}
       <section className="py-16">
@@ -136,7 +107,7 @@ export default function ArticlesPage() {
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="rounded-full bg-[#8B1538] px-3 py-1 text-xs font-medium text-white">
+                      <span className="rounded-full bg-maroon-theme px-3 py-1 text-xs font-medium text-white">
                         {article.category}
                       </span>
                     </div>

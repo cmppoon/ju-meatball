@@ -115,7 +115,7 @@ export default function FranchisePage() {
         subtitle="โอกาสธุรกิจที่มั่นคง ลงทุนต่ำ คืนทุนเร็ว กับแบรนด์ที่คนไทยไว้วางใจมากว่า 45 ปี"
         imageSrc="/images/hero.jpg"
         imageAlt="แฟรนไชส์ลูกชิ้นรสโอชา"
-        className="bg-[#8B1A1A]"
+        className="bg-maroon-theme"
       />
 
       {/* Benefits Section */}
@@ -130,8 +130,8 @@ export default function FranchisePage() {
                 key={benefit.title}
                 className="rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition-shadow hover:shadow-md"
               >
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#8B1A1A]/10">
-                  <benefit.icon className="h-7 w-7 text-[#8B1A1A]" />
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-maroon-theme/10">
+                  <benefit.icon className="h-7 w-7 text-maroon-theme" />
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-gray-900">
                   {benefit.title}
@@ -162,13 +162,13 @@ export default function FranchisePage() {
                 }`}
               >
                 {index === 1 && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#8B1A1A] px-4 py-1 text-xs font-medium text-white">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-maroon-theme px-4 py-1 text-xs font-medium text-white">
                     ยอดนิยม
                   </span>
                 )}
                 <h3 className="text-xl font-bold text-gray-900">{pkg.name}</h3>
                 <div className="mt-4">
-                  <span className="text-3xl font-bold text-[#8B1A1A]">
+                  <span className="text-3xl font-bold text-maroon-theme">
                     {pkg.price}
                   </span>
                   <span className="text-gray-500"> บาท</span>
@@ -189,7 +189,7 @@ export default function FranchisePage() {
                   asChild
                   className={`mt-8 w-full ${
                     index === 1
-                      ? "bg-[#8B1A1A] text-white hover:bg-[#7A1717]"
+                      ? "bg-maroon-theme text-white hover:bg-[#7A1717]"
                       : "bg-gray-100 text-gray-900 hover:bg-gray-200"
                   }`}
                 >
@@ -210,7 +210,7 @@ export default function FranchisePage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((item) => (
               <div key={item.step} className="relative text-center">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#8B1A1A] text-xl font-bold text-white">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-maroon-theme text-xl font-bold text-white">
                   {item.step}
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-gray-900">
@@ -269,7 +269,7 @@ export default function FranchisePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#8B1A1A] py-16">
+      <section className="bg-maroon-theme py-16">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white">
             พร้อมเริ่มต้นธุรกิจแฟรนไชส์?
@@ -280,7 +280,7 @@ export default function FranchisePage() {
           <Button
             asChild
             size="lg"
-            className="mt-8 bg-white text-[#8B1A1A] hover:bg-white/90"
+            className="mt-8 bg-white text-maroon-theme hover:bg-white/90"
           >
             <Link href="/contact">ติดต่อสมัครแฟรนไชส์</Link>
           </Button>

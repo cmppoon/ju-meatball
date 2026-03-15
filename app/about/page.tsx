@@ -120,7 +120,7 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 rounded-xl bg-[#8B1538] p-6 text-white shadow-xl">
+              <div className="absolute -bottom-6 -left-6 rounded-xl bg-maroon-theme p-6 text-white shadow-xl">
                 <p className="text-4xl font-bold">45+</p>
                 <p className="text-sm">ปีแห่งความอร่อย</p>
               </div>
@@ -130,7 +130,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-[#8B1538] py-16">
+      <section className="bg-maroon-theme py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((stat, index) => (
@@ -162,7 +162,7 @@ export default function AboutPage() {
                 key={index}
                 className="bg-card rounded-2xl p-8 text-center shadow-lg transition-shadow hover:shadow-xl"
               >
-                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#8B1538]/10">
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-maroon-theme/10">
                   <value.icon className="h-8 w-8 text-[#8B1538]" />
                 </div>
                 <h3 className="text-foreground mb-3 text-xl font-bold">
@@ -241,11 +241,11 @@ export default function AboutPage() {
             {milestones.map((milestone, index) => (
               <div key={index} className="mb-8 flex gap-6 last:mb-0">
                 <div className="flex flex-col items-center">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#8B1538] text-sm font-bold text-white">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-maroon-theme text-sm font-bold text-white">
                     {milestone.year}
                   </div>
                   {index < milestones.length - 1 && (
-                    <div className="mt-2 h-full w-0.5 bg-[#8B1538]/20" />
+                    <div className="mt-2 h-full w-0.5 bg-maroon-theme/20" />
                   )}
                 </div>
                 <div className="pb-8">
@@ -263,7 +263,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#8B1538] py-16">
+      <section className="bg-maroon-theme py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
             พร้อมลิ้มรสความอร่อย?

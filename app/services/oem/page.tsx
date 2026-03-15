@@ -1,37 +1,15 @@
+import WhyChooseUs from "@/components/whyChooseUs";
+import { HeroSection } from "@/components/hero-section";
+import { Button } from "@/components/ui/button";
+import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { CheckCircle, Factory, Shield, Truck, Users } from "lucide-react";
-import { HeroSection } from "@/components/hero-section";
 
 export const metadata = {
   title: "OEM - บริการผลิตสินค้าภายใต้แบรนด์ของคุณ | ลูกชิ้นรสโอชา",
   description:
     "บริการ OEM ผลิตลูกชิ้นและผลิตภัณฑ์แปรรูปเนื้อสัตว์ภายใต้แบรนด์ของคุณ ด้วยมาตรฐานการผลิตระดับสากล",
 };
-
-const benefits = [
-  {
-    icon: Factory,
-    title: "โรงงานได้มาตรฐาน",
-    description: "โรงงานผลิตได้รับการรับรองมาตรฐาน GMP, HACCP และ อย.",
-  },
-  {
-    icon: Users,
-    title: "ทีมงานมืออาชีพ",
-    description: "ทีม R&D พร้อมพัฒนาสูตรตามความต้องการของคุณ",
-  },
-  {
-    icon: Shield,
-    title: "คุณภาพเชื่อถือได้",
-    description: "ควบคุมคุณภาพทุกขั้นตอนการผลิต",
-  },
-  {
-    icon: Truck,
-    title: "จัดส่งทั่วประเทศ",
-    description: "ระบบขนส่งควบคุมอุณหภูมิ ส่งถึงมือคุณอย่างปลอดภัย",
-  },
-];
 
 const services = [
   "ผลิตลูกชิ้นหมู ลูกชิ้นเนื้อ ลูกชิ้นไก่ ลูกชิ้นปลา",
@@ -50,42 +28,20 @@ export default function OEMPage() {
         subtitle="ผลิตลูกชิ้นและผลิตภัณฑ์แปรรูปเนื้อสัตว์คุณภาพสูง ภายใต้แบรนด์ของคุณ ด้วยประสบการณ์กว่า 45 ปี"
         imageSrc="/images/hero.jpg"
         imageAlt="บริการ OEM ลูกชิ้นรสโอชา"
-        className="bg-[#8B1A1A]"
+        className="bg-maroon-theme"
       />
 
       {/* Benefits Section */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold text-gray-900">
-            ทำไมต้องเลือกเรา
-          </h2>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {benefits.map((benefit) => (
-              <div
-                key={benefit.title}
-                className="rounded-xl border border-gray-100 bg-white p-6 text-center shadow-sm transition-shadow hover:shadow-md"
-              >
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#8B1A1A]/10">
-                  <benefit.icon className="h-7 w-7 text-[#8B1A1A]" />
-                </div>
-                <h3 className="mt-4 text-lg font-semibold text-gray-900">
-                  {benefit.title}
-                </h3>
-                <p className="mt-2 text-sm text-gray-600">
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WhyChooseUs />
 
       {/* Services List */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-slate-100 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900">บริการของเรา</h2>
+              <h2 className="text-black-theme mb-2 text-4xl font-extrabold">
+                บริการของเรา
+              </h2>
               <p className="mt-4 text-gray-600">
                 เราพร้อมให้บริการผลิตสินค้าภายใต้แบรนด์ของคุณอย่างครบวงจร
                 ตั้งแต่การพัฒนาสูตรจนถึงการจัดส่ง
@@ -93,13 +49,13 @@ export default function OEMPage() {
               <ul className="mt-8 space-y-4">
                 {services.map((service) => (
                   <li key={service} className="flex items-start gap-3">
-                    <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#8B1A1A]" />
+                    <CheckCircle className="text-maroon-theme mt-0.5 h-5 w-5 shrink-0" />
                     <span className="text-gray-700">{service}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <div className="relative aspect-4/3 overflow-hidden rounded-none">
               <Image
                 src="/images/about-factory.jpg"
                 alt="โรงงานผลิตลูกชิ้น"
@@ -114,7 +70,7 @@ export default function OEMPage() {
       {/* Process Section */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold text-gray-900">
+          <h2 className="text-black-theme mb-2 text-center text-4xl font-extrabold">
             ขั้นตอนการทำงาน
           </h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -141,7 +97,7 @@ export default function OEMPage() {
               },
             ].map((item) => (
               <div key={item.step} className="relative text-center">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#8B1A1A] text-xl font-bold text-white">
+                <div className="bg-maroon-theme mx-auto flex h-12 w-12 items-center justify-center rounded-full text-xl font-bold text-white">
                   {item.step}
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-gray-900">
@@ -155,21 +111,23 @@ export default function OEMPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#8B1A1A] py-16">
+      <section className="bg-maroon-theme relative z-50 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white">
+          <h2 className="mb-2 text-4xl font-extrabold text-white lg:text-5xl">
             พร้อมเริ่มต้นธุรกิจกับเรา?
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-white/80">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
             ติดต่อเราวันนี้เพื่อปรึกษาและรับใบเสนอราคา
           </p>
-          <Button
-            asChild
-            size="lg"
-            className="mt-8 bg-white text-[#8B1A1A] hover:bg-white/90"
+
+          <Link
+            href="/contact"
+            className="group mt-8 inline-flex h-12 items-center justify-center border-2 border-white bg-transparent px-10 py-5 transition-all hover:bg-white active:scale-95"
           >
-            <Link href="/contact">ติดต่อเรา</Link>
-          </Button>
+            <span className="group-hover:text-maroon-theme text-lg font-bold tracking-wide text-white transition-colors">
+              ติดต่อเรา
+            </span>
+          </Link>
         </div>
       </section>
     </div>
