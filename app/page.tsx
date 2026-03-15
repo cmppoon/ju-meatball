@@ -138,7 +138,7 @@ export default function HomePage() {
 
       <MarqueeBanner />
 
-      <section className="relative overflow-hidden bg-gray-50 px-18 py-18 lg:py-24">
+      <section className="relative overflow-hidden bg-gray-50 px-4 py-18 lg:py-24">
         <div className="pointer-events-none absolute top-0 right-0 h-full w-1/2 bg-linear-to-bl from-[#D4A853]/5 to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8">
