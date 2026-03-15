@@ -7,23 +7,23 @@ const messages = [
   "รสชาติแท้ดั้งเดิม",
   "TRUSTED BRAND",
   "แบรนด์ที่ไว้วางใจ",
-]
+];
 
-const repeatedMessages = [...messages, ...messages, ...messages, ...messages]
+const repeatedMessages = [...messages, ...messages, ...messages, ...messages];
 
 export function MarqueeBanner() {
   return (
-    <div className="bg-[#0A0A0A] py-4 overflow-hidden border-y-4 border-[#8B1A1A]">
-      <div className="flex animate-marquee whitespace-nowrap">
+    <div className="overflow-hidden border-y-4 border-[#8B1A1A] bg-[#0A0A0A] py-4">
+      <div className="animate-marquee flex whitespace-nowrap">
         {repeatedMessages.map((message, index) => (
-          <span key={index} className="flex items-center gap-3 mx-8">
-            <span className="text-[#D4A853]  text-2xl">&#x2022;</span>
-            <span className="text-white font-extrabold text-lg uppercase tracking-[0.2em]">
+          <span key={index} className="mx-8 flex items-center gap-3">
+            <span className="text-2xl text-[#D4A853]">&#x2022;</span>
+            <span className="text-lg font-extrabold tracking-[0.2em] text-white uppercase">
               {message}
             </span>
           </span>
         ))}
       </div>
     </div>
-  )
+  );
 }

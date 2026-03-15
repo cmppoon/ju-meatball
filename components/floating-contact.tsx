@@ -1,17 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Phone, MessageCircle, X } from "lucide-react"
+import { useState } from "react";
+import { Phone, MessageCircle, X } from "lucide-react";
 
 export function FloatingContact() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="fixed right-4 bottom-4 z-50 flex flex-col items-end gap-3">
       {/* Contact buttons - shown when expanded */}
       <div
         className={`flex flex-col items-end gap-3 transition-all duration-300 ${
-          isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+          isOpen
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-4 opacity-0"
         }`}
       >
         {/* Phone */}
@@ -21,11 +23,11 @@ export function FloatingContact() {
           aria-label="Call us"
         >
           {/* Label: Absolutely positioned to the left of the icon */}
-          <span className="absolute right-full mr-3 bg-black text-white text-sm px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          <span className="pointer-events-none absolute right-full mr-3 rounded-lg bg-black px-3 py-1.5 text-sm whitespace-nowrap text-white opacity-0 transition-opacity group-hover:opacity-100">
             โทร: 012-345-6789
           </span>
-          <div className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-            <Phone className="w-5 h-5 text-white" />
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform hover:scale-110">
+            <Phone className="h-5 w-5 text-white" />
           </div>
         </a>
 
@@ -37,11 +39,15 @@ export function FloatingContact() {
           className="group relative flex items-center"
           aria-label="Facebook"
         >
-          <span className="absolute right-full mr-3 bg-black text-white text-sm px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          <span className="pointer-events-none absolute right-full mr-3 rounded-lg bg-black px-3 py-1.5 text-sm whitespace-nowrap text-white opacity-0 transition-opacity group-hover:opacity-100">
             Facebook
           </span>
-          <div className="w-14 h-14 bg-[#1877F2] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1877F2] shadow-lg transition-transform hover:scale-110">
+            <svg
+              className="h-6 w-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
             </svg>
           </div>
@@ -55,11 +61,15 @@ export function FloatingContact() {
           className="group relative flex items-center"
           aria-label="Line"
         >
-          <span className="absolute right-full mr-3 bg-black text-white text-sm px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          <span className="pointer-events-none absolute right-full mr-3 rounded-lg bg-black px-3 py-1.5 text-sm whitespace-nowrap text-white opacity-0 transition-opacity group-hover:opacity-100">
             Line: @lukchinsodocsha
           </span>
-          <div className="w-14 h-14 bg-[#06C755] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-            <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#06C755] shadow-lg transition-transform hover:scale-110">
+            <svg
+              className="h-6 w-6 text-white"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
               <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
             </svg>
           </div>
@@ -69,17 +79,17 @@ export function FloatingContact() {
       {/* Main toggle button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
+        className={`flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all duration-300 ${
           isOpen ? "bg-black" : "bg-[#8B1538]"
         } hover:scale-110`}
         aria-label={isOpen ? "Close contact menu" : "Open contact menu"}
       >
         {isOpen ? (
-          <X className="w-6 h-6 text-white" />
+          <X className="h-6 w-6 text-white" />
         ) : (
-          <MessageCircle className="w-6 h-6 text-white" />
+          <MessageCircle className="h-6 w-6 text-white" />
         )}
       </button>
     </div>
-  )
+  );
 }

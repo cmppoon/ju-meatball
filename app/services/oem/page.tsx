@@ -1,13 +1,14 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { CheckCircle, Factory, Shield, Truck, Users } from "lucide-react"
-import { HeroSection } from "@/components/hero-section"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { CheckCircle, Factory, Shield, Truck, Users } from "lucide-react";
+import { HeroSection } from "@/components/hero-section";
 
 export const metadata = {
   title: "OEM - บริการผลิตสินค้าภายใต้แบรนด์ของคุณ | ลูกชิ้นรสโอชา",
-  description: "บริการ OEM ผลิตลูกชิ้นและผลิตภัณฑ์แปรรูปเนื้อสัตว์ภายใต้แบรนด์ของคุณ ด้วยมาตรฐานการผลิตระดับสากล",
-}
+  description:
+    "บริการ OEM ผลิตลูกชิ้นและผลิตภัณฑ์แปรรูปเนื้อสัตว์ภายใต้แบรนด์ของคุณ ด้วยมาตรฐานการผลิตระดับสากล",
+};
 
 const benefits = [
   {
@@ -30,7 +31,7 @@ const benefits = [
     title: "จัดส่งทั่วประเทศ",
     description: "ระบบขนส่งควบคุมอุณหภูมิ ส่งถึงมือคุณอย่างปลอดภัย",
   },
-]
+];
 
 const services = [
   "ผลิตลูกชิ้นหมู ลูกชิ้นเนื้อ ลูกชิ้นไก่ ลูกชิ้นปลา",
@@ -39,7 +40,7 @@ const services = [
   "ออกแบบบรรจุภัณฑ์",
   "ผลิตตาม MOQ ที่ยืดหยุ่น",
   "บริการ Private Label",
-]
+];
 
 export default function OEMPage() {
   return (
@@ -70,7 +71,9 @@ export default function OEMPage() {
                 <h3 className="mt-4 text-lg font-semibold text-gray-900">
                   {benefit.title}
                 </h3>
-                <p className="mt-2 text-sm text-gray-600">{benefit.description}</p>
+                <p className="mt-2 text-sm text-gray-600">
+                  {benefit.description}
+                </p>
               </div>
             ))}
           </div>
@@ -82,9 +85,7 @@ export default function OEMPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900">
-                บริการของเรา
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900">บริการของเรา</h2>
               <p className="mt-4 text-gray-600">
                 เราพร้อมให้บริการผลิตสินค้าภายใต้แบรนด์ของคุณอย่างครบวงจร
                 ตั้งแต่การพัฒนาสูตรจนถึงการจัดส่ง
@@ -118,10 +119,26 @@ export default function OEMPage() {
           </h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { step: 1, title: "ปรึกษาความต้องการ", desc: "พูดคุยเพื่อเข้าใจความต้องการของคุณ" },
-              { step: 2, title: "พัฒนาสูตร", desc: "ทีม R&D พัฒนาสูตรตามที่คุณต้องการ" },
-              { step: 3, title: "ตัวอย่างและปรับปรุง", desc: "ทดลองชิมและปรับปรุงจนพอใจ" },
-              { step: 4, title: "ผลิตและจัดส่ง", desc: "ผลิตตามออเดอร์และจัดส่งตรงเวลา" },
+              {
+                step: 1,
+                title: "ปรึกษาความต้องการ",
+                desc: "พูดคุยเพื่อเข้าใจความต้องการของคุณ",
+              },
+              {
+                step: 2,
+                title: "พัฒนาสูตร",
+                desc: "ทีม R&D พัฒนาสูตรตามที่คุณต้องการ",
+              },
+              {
+                step: 3,
+                title: "ตัวอย่างและปรับปรุง",
+                desc: "ทดลองชิมและปรับปรุงจนพอใจ",
+              },
+              {
+                step: 4,
+                title: "ผลิตและจัดส่ง",
+                desc: "ผลิตตามออเดอร์และจัดส่งตรงเวลา",
+              },
             ].map((item) => (
               <div key={item.step} className="relative text-center">
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#8B1A1A] text-xl font-bold text-white">
@@ -156,5 +173,5 @@ export default function OEMPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -75,9 +75,9 @@
 }
 
 @theme inline {
-  --font-sans: 'Sarabun', 'Sarabun Fallback', sans-serif;
-  --font-display: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --font-sans: "Sarabun", "Sarabun Fallback", sans-serif;
+  --font-display: "Bebas Neue", "Bebas Neue Fallback", sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -148,28 +148,52 @@
 
 /* Bold animations */
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes slide-up {
-  from { transform: translateY(40px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scale-in {
-  from { transform: scale(0.95); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes reveal-text {
-  from { clip-path: inset(0 100% 0 0); }
-  to { clip-path: inset(0 0 0 0); }
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
 }
 
 .animate-marquee {
@@ -193,11 +217,21 @@
 }
 
 /* Delay utilities */
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; }
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
 
 /* Bold hover effects */
 .hover-bold {
@@ -214,7 +248,7 @@
 }
 
 .card-bold:hover {
-  border-color: #8B1A1A;
+  border-color: #8b1a1a;
   transform: translateY(-8px);
   box-shadow: 0 25px 50px -12px rgba(139, 26, 26, 0.25);
 }
@@ -239,7 +273,7 @@
 /* Bold divider */
 .divider-bold {
   height: 6px;
-  background: #8B1A1A;
+  background: #8b1a1a;
 }
 
 /* Custom scrollbar - bold */
@@ -252,16 +286,16 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8B1A1A;
+  background: #8b1a1a;
   border: 2px solid #000;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A52020;
+  background: #a52020;
 }
 
 /* Selection color */
 ::selection {
-  background: #8B1A1A;
+  background: #8b1a1a;
   color: white;
 }

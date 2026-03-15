@@ -1,12 +1,13 @@
-import Image from "next/image"
-import Link from "next/link"
-import type { Metadata } from "next"
-import { HeroSection } from "@/components/hero-section"
+import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
+import { HeroSection } from "@/components/hero-section";
 
 export const metadata: Metadata = {
   title: "บทความ - ลูกชิ้นรสโอชา | Articles",
-  description: "อ่านบทความเกี่ยวกับลูกชิ้น สูตรอาหาร และเคล็ดลับการทำอาหารจากลูกชิ้นรสโอชา",
-}
+  description:
+    "อ่านบทความเกี่ยวกับลูกชิ้น สูตรอาหาร และเคล็ดลับการทำอาหารจากลูกชิ้นรสโอชา",
+};
 
 const articles = [
   {
@@ -14,7 +15,8 @@ const articles = [
     slug: "history-of-thai-meatballs",
     title: "ประวัติความเป็นมาของลูกชิ้นไทย",
     titleEn: "The History of Thai Meatballs",
-    excerpt: "ลูกชิ้นเป็นอาหารที่มีประวัติยาวนานในประเทศไทย เริ่มต้นจากการนำเข้ามาโดยชาวจีนและได้รับการพัฒนาจนกลายเป็นอาหารยอดนิยมของคนไทย",
+    excerpt:
+      "ลูกชิ้นเป็นอาหารที่มีประวัติยาวนานในประเทศไทย เริ่มต้นจากการนำเข้ามาโดยชาวจีนและได้รับการพัฒนาจนกลายเป็นอาหารยอดนิยมของคนไทย",
     image: "/images/product-1.jpg",
     date: "15 มกราคม 2024",
     category: "ความรู้",
@@ -24,7 +26,8 @@ const articles = [
     slug: "how-to-choose-quality-meatballs",
     title: "วิธีเลือกซื้อลูกชิ้นคุณภาพดี",
     titleEn: "How to Choose Quality Meatballs",
-    excerpt: "เคล็ดลับการเลือกซื้อลูกชิ้นที่มีคุณภาพ สังเกตจากสี กลิ่น ความยืดหยุ่น และส่วนผสมที่ปลอดภัยต่อสุขภาพ",
+    excerpt:
+      "เคล็ดลับการเลือกซื้อลูกชิ้นที่มีคุณภาพ สังเกตจากสี กลิ่น ความยืดหยุ่น และส่วนผสมที่ปลอดภัยต่อสุขภาพ",
     image: "/images/product-2.jpg",
     date: "28 ธันวาคม 2023",
     category: "เคล็ดลับ",
@@ -34,7 +37,8 @@ const articles = [
     slug: "meatball-recipes-for-family",
     title: "5 เมนูลูกชิ้นทำง่ายสำหรับครอบครัว",
     titleEn: "5 Easy Meatball Recipes for Family",
-    excerpt: "รวม 5 สูตรอาหารจากลูกชิ้นที่ทำได้ง่าย อร่อย และเหมาะสำหรับทุกคนในครอบครัว ตั้งแต่ต้มยำไปจนถึงผัดพริกแกง",
+    excerpt:
+      "รวม 5 สูตรอาหารจากลูกชิ้นที่ทำได้ง่าย อร่อย และเหมาะสำหรับทุกคนในครอบครัว ตั้งแต่ต้มยำไปจนถึงผัดพริกแกง",
     image: "/images/product-3.jpg",
     date: "10 ธันวาคม 2023",
     category: "สูตรอาหาร",
@@ -44,7 +48,8 @@ const articles = [
     slug: "health-benefits-of-meatballs",
     title: "คุณค่าทางโภชนาการของลูกชิ้น",
     titleEn: "Health Benefits of Meatballs",
-    excerpt: "ลูกชิ้นเป็นแหล่งโปรตีนที่ดี มีไขมันต่ำ และสามารถเป็นส่วนหนึ่งของอาหารเพื่อสุขภาพได้หากเลือกอย่างถูกวิธี",
+    excerpt:
+      "ลูกชิ้นเป็นแหล่งโปรตีนที่ดี มีไขมันต่ำ และสามารถเป็นส่วนหนึ่งของอาหารเพื่อสุขภาพได้หากเลือกอย่างถูกวิธี",
     image: "/images/product-4.jpg",
     date: "5 พฤศจิกายน 2023",
     category: "สุขภาพ",
@@ -54,7 +59,8 @@ const articles = [
     slug: "street-food-meatball-culture",
     title: "วัฒนธรรมลูกชิ้นปิ้งริมทาง",
     titleEn: "Thai Street Food Meatball Culture",
-    excerpt: "สำรวจวัฒนธรรมการกินลูกชิ้นปิ้งริมทางของคนไทย ตั้งแต่รถเข็นหน้าโรงเรียนไปจนถึงตลาดนัดยามเย็น",
+    excerpt:
+      "สำรวจวัฒนธรรมการกินลูกชิ้นปิ้งริมทางของคนไทย ตั้งแต่รถเข็นหน้าโรงเรียนไปจนถึงตลาดนัดยามเย็น",
     image: "/images/hero.jpg",
     date: "20 ตุลาคม 2023",
     category: "วัฒนธรรม",
@@ -64,18 +70,26 @@ const articles = [
     slug: "meatball-storage-tips",
     title: "วิธีเก็บรักษาลูกชิ้นให้สดใหม่",
     titleEn: "Meatball Storage Tips",
-    excerpt: "เรียนรู้วิธีการเก็บรักษาลูกชิ้นอย่างถูกวิธี ทั้งการแช่เย็นและแช่แข็ง เพื่อคงความสดและรสชาติที่ดี",
+    excerpt:
+      "เรียนรู้วิธีการเก็บรักษาลูกชิ้นอย่างถูกวิธี ทั้งการแช่เย็นและแช่แข็ง เพื่อคงความสดและรสชาติที่ดี",
     image: "/images/about-factory.jpg",
     date: "8 ตุลาคม 2023",
     category: "เคล็ดลับ",
   },
-]
+];
 
-const categories = ["ทั้งหมด", "ความรู้", "เคล็ดลับ", "สูตรอาหาร", "สุขภาพ", "วัฒนธรรม"]
+const categories = [
+  "ทั้งหมด",
+  "ความรู้",
+  "เคล็ดลับ",
+  "สูตรอาหาร",
+  "สุขภาพ",
+  "วัฒนธรรม",
+];
 
 export default function ArticlesPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background min-h-screen">
       <HeroSection
         title="บทความ"
         subtitle="อ่านบทความเกี่ยวกับลูกชิ้น สูตรอาหาร และเคล็ดลับการทำอาหารจากลูกชิ้นรสโอชา"
@@ -85,13 +99,13 @@ export default function ArticlesPage() {
       />
 
       {/* Categories */}
-      <section className="py-8 border-b border-border">
+      <section className="border-border border-b py-8">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category, index) => (
               <button
                 key={category}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
+                className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${
                   index === 0
                     ? "bg-[#8B1538] text-white"
                     : "bg-muted text-muted-foreground hover:bg-[#8B1538]/10 hover:text-[#8B1538]"
@@ -107,11 +121,11 @@ export default function ArticlesPage() {
       {/* Articles Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {articles.map((article) => (
               <article
                 key={article.id}
-                className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
+                className="bg-card group overflow-hidden rounded-2xl shadow-lg transition-shadow hover:shadow-xl"
               >
                 <Link href={`/articles/${article.slug}`}>
                   <div className="relative h-52 overflow-hidden">
@@ -119,25 +133,31 @@ export default function ArticlesPage() {
                       src={article.image}
                       alt={article.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-[#8B1538] text-white text-xs font-medium px-3 py-1 rounded-full">
+                      <span className="rounded-full bg-[#8B1538] px-3 py-1 text-xs font-medium text-white">
                         {article.category}
                       </span>
                     </div>
                   </div>
                   <div className="p-6">
-                    <p className="text-sm text-muted-foreground mb-2">{article.date}</p>
-                    <h2 className="text-xl font-bold text-foreground mb-2 group-hover:text-[#8B1538] transition-colors">
+                    <p className="text-muted-foreground mb-2 text-sm">
+                      {article.date}
+                    </p>
+                    <h2 className="text-foreground mb-2 text-xl font-bold transition-colors group-hover:text-[#8B1538]">
                       {article.title}
                     </h2>
-                    <p className="text-sm text-muted-foreground mb-1">{article.titleEn}</p>
-                    <p className="text-muted-foreground mt-3 line-clamp-3">{article.excerpt}</p>
-                    <div className="mt-4 flex items-center text-[#8B1538] font-medium">
+                    <p className="text-muted-foreground mb-1 text-sm">
+                      {article.titleEn}
+                    </p>
+                    <p className="text-muted-foreground mt-3 line-clamp-3">
+                      {article.excerpt}
+                    </p>
+                    <div className="mt-4 flex items-center font-medium text-[#8B1538]">
                       <span>อ่านต่อ</span>
                       <svg
-                        className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                        className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -158,5 +178,5 @@ export default function ArticlesPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

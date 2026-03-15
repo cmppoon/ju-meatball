@@ -1,13 +1,20 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { CheckCircle, GraduationCap, MapPin, Store, Utensils } from "lucide-react"
-import { HeroSection } from "@/components/hero-section"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  CheckCircle,
+  GraduationCap,
+  MapPin,
+  Store,
+  Utensils,
+} from "lucide-react";
+import { HeroSection } from "@/components/hero-section";
 
 export const metadata = {
   title: "แฟรนไชส์ - โอกาสธุรกิจลูกชิ้นรสโอชา | ลูกชิ้นรสโอชา",
-  description: "เปิดรับสมัครแฟรนไชส์ลูกชิ้นรสโอชา ธุรกิจที่มั่นคง ลงทุนต่ำ คืนทุนเร็ว พร้อมการสนับสนุนอย่างเต็มรูปแบบ",
-}
+  description:
+    "เปิดรับสมัครแฟรนไชส์ลูกชิ้นรสโอชา ธุรกิจที่มั่นคง ลงทุนต่ำ คืนทุนเร็ว พร้อมการสนับสนุนอย่างเต็มรูปแบบ",
+};
 
 const benefits = [
   {
@@ -30,7 +37,7 @@ const benefits = [
     title: "เลือกทำเลได้",
     description: "ให้คำปรึกษาในการเลือกทำเลที่เหมาะสม",
   },
-]
+];
 
 const packages = [
   {
@@ -75,14 +82,30 @@ const packages = [
       "สนับสนุนการตลาดออนไลน์",
     ],
   },
-]
+];
 
 const steps = [
-  { step: 1, title: "ติดต่อสอบถาม", desc: "โทรหาเราหรือกรอกแบบฟอร์มเพื่อรับข้อมูล" },
-  { step: 2, title: "นัดพบปรึกษา", desc: "พูดคุยรายละเอียดและตอบคำถามทุกข้อสงสัย" },
-  { step: 3, title: "เลือกแพ็คเกจ", desc: "เลือกแพ็คเกจที่เหมาะกับคุณและชำระค่าใช้จ่าย" },
-  { step: 4, title: "อบรมและเปิดร้าน", desc: "เข้าอบรมและเริ่มต้นธุรกิจของคุณ" },
-]
+  {
+    step: 1,
+    title: "ติดต่อสอบถาม",
+    desc: "โทรหาเราหรือกรอกแบบฟอร์มเพื่อรับข้อมูล",
+  },
+  {
+    step: 2,
+    title: "นัดพบปรึกษา",
+    desc: "พูดคุยรายละเอียดและตอบคำถามทุกข้อสงสัย",
+  },
+  {
+    step: 3,
+    title: "เลือกแพ็คเกจ",
+    desc: "เลือกแพ็คเกจที่เหมาะกับคุณและชำระค่าใช้จ่าย",
+  },
+  {
+    step: 4,
+    title: "อบรมและเปิดร้าน",
+    desc: "เข้าอบรมและเริ่มต้นธุรกิจของคุณ",
+  },
+];
 
 export default function FranchisePage() {
   return (
@@ -113,7 +136,9 @@ export default function FranchisePage() {
                 <h3 className="mt-4 text-lg font-semibold text-gray-900">
                   {benefit.title}
                 </h3>
-                <p className="mt-2 text-sm text-gray-600">{benefit.description}</p>
+                <p className="mt-2 text-sm text-gray-600">
+                  {benefit.description}
+                </p>
               </div>
             ))}
           </div>
@@ -131,7 +156,9 @@ export default function FranchisePage() {
               <div
                 key={pkg.name}
                 className={`relative rounded-2xl border-2 bg-white p-8 ${
-                  index === 1 ? "border-[#8B1A1A] lg:scale-105" : "border-gray-200"
+                  index === 1
+                    ? "border-[#8B1A1A] lg:scale-105"
+                    : "border-gray-200"
                 }`}
               >
                 {index === 1 && (
@@ -149,7 +176,10 @@ export default function FranchisePage() {
                 <p className="mt-2 text-sm text-gray-500">{pkg.description}</p>
                 <ul className="mt-6 space-y-3">
                   {pkg.includes.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
+                    <li
+                      key={item}
+                      className="flex items-start gap-2 text-sm text-gray-600"
+                    >
                       <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-500" />
                       {item}
                     </li>
@@ -204,12 +234,14 @@ export default function FranchisePage() {
               {
                 name: "คุณสมชาย",
                 location: "กรุงเทพฯ",
-                quote: "เปิดร้านมา 2 ปี คืนทุนภายใน 8 เดือน ทีมงานซัพพอร์ตดีมาก",
+                quote:
+                  "เปิดร้านมา 2 ปี คืนทุนภายใน 8 เดือน ทีมงานซัพพอร์ตดีมาก",
               },
               {
                 name: "คุณสมหญิง",
                 location: "เชียงใหม่",
-                quote: "ไม่มีประสบการณ์ทำอาหารมาก่อน แต่อบรมครบจบพร้อมเปิดร้านได้เลย",
+                quote:
+                  "ไม่มีประสบการณ์ทำอาหารมาก่อน แต่อบรมครบจบพร้อมเปิดร้านได้เลย",
               },
               {
                 name: "คุณวิชัย",
@@ -223,8 +255,12 @@ export default function FranchisePage() {
               >
                 <p className="text-gray-600">&quot;{testimonial.quote}&quot;</p>
                 <div className="mt-4">
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.location}</p>
+                  <p className="font-semibold text-gray-900">
+                    {testimonial.name}
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    {testimonial.location}
+                  </p>
                 </div>
               </div>
             ))}
@@ -251,5 +287,5 @@ export default function FranchisePage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

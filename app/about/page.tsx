@@ -73,7 +73,7 @@ const stats = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background min-h-screen">
       <HeroSection
         title="เกี่ยวกับเรา"
         subtitle="ลูกชิ้นรสโอชา - ตำนานความอร่อยตั้งแต่ปี 1978"
@@ -84,15 +84,15 @@ export default function AboutPage() {
       {/* Story Section */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <span className="text-[#8B1538] font-semibold text-sm uppercase tracking-wider">
+              <span className="text-sm font-semibold tracking-wider text-[#8B1538] uppercase">
                 เรื่องราวของเรา
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">
+              <h2 className="text-foreground mt-2 mb-6 text-3xl font-bold md:text-4xl">
                 จากครัวเล็กๆ สู่ความอร่อยระดับประเทศ
               </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="text-muted-foreground space-y-4 leading-relaxed">
                 <p>
                   ลูกชิ้นรสโอชา เริ่มต้นจากความรักในการทำอาหารของคุณยายในปี 1978
                   ด้วยสูตรลับที่สืบทอดมาจากรุ่นสู่รุ่น
@@ -112,7 +112,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative h-[400px] overflow-hidden rounded-2xl shadow-2xl">
                 <Image
                   src="/images/about-tradition.jpg"
                   alt="ประเพณีการทำลูกชิ้น"
@@ -120,7 +120,7 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-[#8B1538] text-white p-6 rounded-xl shadow-xl">
+              <div className="absolute -bottom-6 -left-6 rounded-xl bg-[#8B1538] p-6 text-white shadow-xl">
                 <p className="text-4xl font-bold">45+</p>
                 <p className="text-sm">ปีแห่งความอร่อย</p>
               </div>
@@ -130,12 +130,12 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-[#8B1538]">
+      <section className="bg-[#8B1538] py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((stat, index) => (
               <div key={index} className="text-center text-white">
-                <p className="text-4xl md:text-5xl font-bold mb-2">
+                <p className="mb-2 text-4xl font-bold md:text-5xl">
                   {stat.number}
                 </p>
                 <p className="text-white/80">{stat.label}</p>
@@ -148,24 +148,24 @@ export default function AboutPage() {
       {/* Values Section */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="text-[#8B1538] font-semibold text-sm uppercase tracking-wider">
+          <div className="mb-12 text-center">
+            <span className="text-sm font-semibold tracking-wider text-[#8B1538] uppercase">
               คุณค่าของเรา
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
+            <h2 className="text-foreground mt-2 text-3xl font-bold md:text-4xl">
               สิ่งที่เรายึดมั่น
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-card p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center"
+                className="bg-card rounded-2xl p-8 text-center shadow-lg transition-shadow hover:shadow-xl"
               >
-                <div className="w-16 h-16 bg-[#8B1538]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="w-8 h-8 text-[#8B1538]" />
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#8B1538]/10">
+                  <value.icon className="h-8 w-8 text-[#8B1538]" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">
+                <h3 className="text-foreground mb-3 text-xl font-bold">
                   {value.title}
                 </h3>
                 <p className="text-muted-foreground">{value.description}</p>
@@ -176,11 +176,11 @@ export default function AboutPage() {
       </section>
 
       {/* Factory Section */}
-      <section className="py-16 md:py-24 bg-muted">
+      <section className="bg-muted py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="order-2 lg:order-1">
-              <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative h-[400px] overflow-hidden rounded-2xl shadow-2xl">
                 <Image
                   src="/images/about-factory.jpg"
                   alt="โรงงานผลิตลูกชิ้นรสโอชา"
@@ -190,13 +190,13 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <span className="text-[#8B1538] font-semibold text-sm uppercase tracking-wider">
+              <span className="text-sm font-semibold tracking-wider text-[#8B1538] uppercase">
                 โรงงานของเรา
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">
+              <h2 className="text-foreground mt-2 mb-6 text-3xl font-bold md:text-4xl">
                 มาตรฐานการผลิตระดับสากล
               </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="text-muted-foreground space-y-4 leading-relaxed">
                 <p>
                   โรงงานผลิตของเราได้รับการรับรองมาตรฐาน GMP และ HACCP
                   มั่นใจได้ในความสะอาดและปลอดภัยในทุกขั้นตอนการผลิต
@@ -208,16 +208,16 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="mt-8 flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 bg-background px-4 py-2 rounded-full">
-                  <div className="w-3 h-3 bg-green-500 rounded-full" />
+                <div className="bg-background flex items-center gap-2 rounded-full px-4 py-2">
+                  <div className="h-3 w-3 rounded-full bg-green-500" />
                   <span className="text-sm font-medium">GMP Certified</span>
                 </div>
-                <div className="flex items-center gap-2 bg-background px-4 py-2 rounded-full">
-                  <div className="w-3 h-3 bg-green-500 rounded-full" />
+                <div className="bg-background flex items-center gap-2 rounded-full px-4 py-2">
+                  <div className="h-3 w-3 rounded-full bg-green-500" />
                   <span className="text-sm font-medium">HACCP Certified</span>
                 </div>
-                <div className="flex items-center gap-2 bg-background px-4 py-2 rounded-full">
-                  <div className="w-3 h-3 bg-green-500 rounded-full" />
+                <div className="bg-background flex items-center gap-2 rounded-full px-4 py-2">
+                  <div className="h-3 w-3 rounded-full bg-green-500" />
                   <span className="text-sm font-medium">อย. Approved</span>
                 </div>
               </div>
@@ -229,27 +229,27 @@ export default function AboutPage() {
       {/* Timeline Section */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="text-[#8B1538] font-semibold text-sm uppercase tracking-wider">
+          <div className="mb-12 text-center">
+            <span className="text-sm font-semibold tracking-wider text-[#8B1538] uppercase">
               เส้นทางของเรา
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
+            <h2 className="text-foreground mt-2 text-3xl font-bold md:text-4xl">
               ประวัติและพัฒนาการ
             </h2>
           </div>
-          <div className="max-w-3xl mx-auto">
+          <div className="mx-auto max-w-3xl">
             {milestones.map((milestone, index) => (
-              <div key={index} className="flex gap-6 mb-8 last:mb-0">
+              <div key={index} className="mb-8 flex gap-6 last:mb-0">
                 <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-[#8B1538] rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#8B1538] text-sm font-bold text-white">
                     {milestone.year}
                   </div>
                   {index < milestones.length - 1 && (
-                    <div className="w-0.5 h-full bg-[#8B1538]/20 mt-2" />
+                    <div className="mt-2 h-full w-0.5 bg-[#8B1538]/20" />
                   )}
                 </div>
                 <div className="pb-8">
-                  <h3 className="text-xl font-bold text-foreground mb-2">
+                  <h3 className="text-foreground mb-2 text-xl font-bold">
                     {milestone.title}
                   </h3>
                   <p className="text-muted-foreground">
@@ -263,17 +263,17 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#8B1538]">
+      <section className="bg-[#8B1538] py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
             พร้อมลิ้มรสความอร่อย?
           </h2>
-          <p className="text-white/90 mb-8 max-w-xl mx-auto">
+          <p className="mx-auto mb-8 max-w-xl text-white/90">
             ติดต่อเราวันนี้เพื่อสั่งซื้อลูกชิ้นคุณภาพ หรือสอบถามข้อมูลเพิ่มเติม
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white text-[#8B1538] px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition-colors"
+            className="inline-block rounded-full bg-white px-8 py-4 font-semibold text-[#8B1538] transition-colors hover:bg-white/90"
           >
             ติดต่อเรา
           </a>
