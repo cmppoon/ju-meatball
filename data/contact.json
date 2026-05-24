@@ -1,0 +1,64 @@
+{
+  "addressFull": "6 ซอยลาดพร้าววังหิน71 ถนนลาดพร้าววังหิน เขตลาดพร้าว แขวงลาดพร้าว กรุงเทพฯ 10230",
+  "map": {
+    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.2971107057733!2d100.5907809!3d13.8211895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29da72567ac59%3A0x21b166502565bcc2!2z4Lil4Li54LiB4LiK4Li04LmJ4LiZ4Lij4Liq4LmC4Lit4LiK4Liy!5e0!3m2!1sen!2ssg!4v1779602229452!5m2!1sen!2ssg",
+    "googleMapsLink": "https://maps.app.goo.gl/XUBVEUBQPcPQUuPF9"
+  },
+  "info": [
+    {
+      "icon": "Phone",
+      "title": "โทรศัพท์",
+      "details": [
+        { "text": "083-820-0009", "link": "tel:+66838200009" },
+        { "text": "02-539-7599", "link": "tel:+6625397599" }
+      ]
+    },
+    {
+      "icon": "Mail",
+      "title": "อีเมล",
+      "details": [
+        { "text": "rosochafoods@hotmail.com", "link": "mailto:rosochafoods@hotmail.com" }
+      ]
+    },
+    {
+      "icon": "MapPin",
+      "title": "ที่อยู่",
+      "details": [
+        { "text": "6 ซอยลาดพร้าววังหิน71 ถนนลาดพร้าววังหิน เขตลาดพร้าว แขวงลาดพร้าว กรุงเทพฯ 10230", "link": "https://maps.app.goo.gl/XUBVEUBQPcPQUuPF9" }
+      ]
+    },
+    {
+      "icon": "Clock",
+      "title": "เวลาทำการ",
+      "details": [
+        { "text": "จันทร์ - อาทิตย์: 06:00 - 18:00" }
+      ]
+    }
+  ],
+  "social": [
+    {
+      "platform": "facebook",
+      "href": "https://www.facebook.com/share/1FzX8Q8yyC/?mibextid=wwXIfr",
+      "label": "Facebook"
+    },
+    {
+      "platform": "line",
+      "href": "https://lin.ee/TbwRvZ1",
+      "label": "Line"
+    },
+    {
+      "platform": "instagram",
+      "href": "https://www.instagram.com/rodocha_meatball?igsh=MXRwd3B4ZWp6cGI2bA==",
+      "label": "Instagram"
+    },
+    {
+      "platform": "tiktok",
+      "href": "https://www.tiktok.com/@rosocha_meatball?_r=1&_t=ZS-96cZIpVbdX6",
+      "label": "TikTok"
+    }
+  ],
+  "socialSection": {
+    "heading": "ติดตามเราบนโซเชียลมีเดีย",
+    "body": "ติดตามข่าวสาร โปรโมชั่น และเมนูใหม่ๆ ได้ทุกช่องทาง"
+  }
+}

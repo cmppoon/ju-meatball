@@ -1,8 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { HeroSection } from "@/components/hero-section";
+import productsData from "@/data/products.json";
 
 export const metadata: Metadata = {
   title: "สินค้า - ลูกชิ้นรสโอชา",
@@ -10,48 +10,15 @@ export const metadata: Metadata = {
     "ลูกชิ้นคุณภาพพรีเมียม ลูกชิ้นหมู ลูกชิ้นเนื้อ ลูกชิ้นปลา ลูกชิ้นไก่ สูตรดั้งเดิมกว่า 45 ปี",
 };
 
-const products = [
-  {
-    id: 1,
-    name: "ลูกชิ้นหมู",
-    image: "/images/product-1.jpg",
-    description:
-      "ลูกชิ้นหมูแท้ 100% เนื้อแน่น กรอบนอกนุ่มใน รสชาติกลมกล่อม เหมาะสำหรับปิ้งย่าง ต้ม หรือทอด",
-    features: ["เนื้อหมูแท้ 100%", "ไม่ใส่สารกันบูด", "ผ่านมาตรฐาน อย."],
-  },
-  {
-    id: 2,
-    name: "ลูกชิ้นเนื้อ",
-    image: "/images/product-2.jpg",
-    description:
-      "ลูกชิ้นเนื้อวัวคัดพิเศษ รสชาติเข้มข้น เนื้อแน่นเด้ง เหมาะสำหรับก๋วยเตี๋ยว หรือหมูกระทะ",
-    features: ["เนื้อวัวคัดพิเศษ", "รสชาติเข้มข้น", "ผ่านมาตรฐาน อย."],
-  },
-  {
-    id: 3,
-    name: "ลูกชิ้นปลา",
-    image: "/images/product-3.jpg",
-    description:
-      "ลูกชิ้นปลาสดใหม่ เนื้อเด้งกรุบกรอบ รสชาติหวานธรรมชาติ เหมาะสำหรับต้มยำ หรือทอด",
-    features: ["ปลาสดใหม่ทุกวัน", "ไขมันต่ำ", "ผ่านมาตรฐาน อย."],
-  },
-  {
-    id: 4,
-    name: "ลูกชิ้นไก่",
-    image: "/images/product-4.jpg",
-    description:
-      "ลูกชิ้นไก่เนื้อดี ไขมันต่ำ ดีต่อสุขภาพ รสชาติอ่อนหวาน เหมาะสำหรับทุกเมนู",
-    features: ["ไก่สดคุณภาพ", "ไขมันต่ำ", "ผ่านมาตรฐาน อย."],
-  },
-];
-
 export default function ProductsPage() {
+  const { items, wholesale } = productsData;
+
   return (
     <>
       <HeroSection
         title="สินค้าของเรา"
-        subtitle="ลูกชิ้นคุณภาพพรีเมียม ผลิตจากวัตถุดิบชั้นดี ด้วยสูตรลับที่สืบทอดมากว่า 45 ปี"
-        imageSrc="/images/hero.jpg"
+        subtitle="ลูกชิ้นระดับคุณภาพ สูตรดั้งเดิมกว่า 45 ปี"
+        imageSrc="/images/hero.webp"
         imageAlt="ลูกชิ้นคุณภาพ"
         className="bg-black-theme"
       />
@@ -59,7 +26,7 @@ export default function ProductsPage() {
       <section className="bg-gray-50 py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {products.map((product) => (
+            {items.map((product) => (
               <div
                 key={product.id}
                 className="group hover:border-maroon-theme flex flex-col border-2 border-gray-200 bg-white transition-all duration-300"
@@ -112,15 +79,14 @@ export default function ProductsPage() {
             สำหรับผู้ประกอบการ
           </span>
           <h2 className="text-black-theme mb-8 text-4xl leading-tight font-extrabold lg:text-6xl">
-            ต้องการสั่งซื้อ<span className="text-maroon-theme">จำนวนมาก?</span>
+            {wholesale.heading}<span className="text-maroon-theme">{wholesale.headingHighlight}</span>
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-gray-600 lg:text-xl">
-            เรามีบริการขายส่งสำหรับร้านอาหาร ร้านก๋วยเตี๋ยว และผู้ประกอบการ
-            พร้อมส่วนลดพิเศษและระบบจัดส่งควบคุมอุณหภูมิทั่วประเทศ
+            {wholesale.body}
           </p>
           <Link
             href="/contact"
-            className="bg-maroon-theme hover:bg-maroon-theme/80 inline-flex items-center justify-center rounded-none px-12 py-6 text-xl font-bold tracking-wide text-white transition-all active:scale-95"
+            className="bg-maroon-theme hover:bg-maroon-theme/80 inline-flex items-center justify-center px-10 py-4 text-lg font-bold tracking-wide text-white transition-all active:scale-95"
           >
             ติดต่อฝ่ายขาย
           </Link>

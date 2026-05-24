@@ -30,11 +30,11 @@ export function HeroSection({
         className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/50" />
       <div className="relative z-10 px-4 text-center text-white">
-        <h1 className="mb-4 text-4xl font-bold md:text-6xl">{title}</h1>
+        <h1 className="mb-4 text-4xl font-extrabold md:text-5xl lg:text-6xl">{title}</h1>
         {subtitle ? (
-          <p className="text-xl text-white/90 md:text-2xl">{subtitle}</p>
+          <p className="mx-auto max-w-2xl text-base text-white/80 md:text-lg">{subtitle}</p>
         ) : null}
       </div>
     </section>

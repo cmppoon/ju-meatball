@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingContact } from "@/components/floating-contact";
+import siteData from "@/data/site.json";
 
 const sarabun = Sarabun({
   subsets: ["thai", "latin"],
@@ -19,11 +20,9 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "ลูกชิ้นรสโอชา - Premium Thai Meatballs Since 1978",
-  description:
-    "Authentic Thai meatballs made with premium ingredients and traditional recipes since 1978. Order now for the best meatballs in Thailand.",
-  keywords:
-    "meatballs, Thai food, ลูกชิ้น, ลูกชิ้นรสโอชา, authentic Thai meatballs",
+  title: siteData.metadata.title,
+  description: siteData.metadata.description,
+  keywords: siteData.metadata.keywords,
   icons: {
     icon: "/images/logo.png",
   },

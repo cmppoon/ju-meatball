@@ -4,37 +4,11 @@ import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import servicesData from "@/data/services.json";
+import siteData from "@/data/site.json";
 
-const navigation = [
-  { name: "หน้าหลัก", href: "/" },
-  { name: "สินค้า", href: "/products" },
-  { name: "เกี่ยวกับเรา", href: "/about" },
-  { name: "บทความ", href: "/articles" },
-  { name: "ติดต่อเรา", href: "/contact" },
-];
-
-const services = [
-  {
-    name: "OEM",
-    href: "/services/oem",
-    description: "บริการผลิตสินค้าภายใต้แบรนด์ของคุณ",
-  },
-  {
-    name: "ตัวแทนจำหน่าย",
-    href: "/services/distributor",
-    description: "ร่วมเป็นตัวแทนจำหน่ายกับเรา",
-  },
-  {
-    name: "แฟรนไชส์",
-    href: "/services/franchise",
-    description: "โอกาสธุรกิจแฟรนไชส์ลูกชิ้น",
-  },
-  {
-    name: "ร้านอาหาร",
-    href: "/contact",
-    description: "โอกาสธุรกิจร้านอาหารลูกชิ้น",
-  },
-];
+const navigation = siteData.navigation;
+const services = servicesData.navigationDropdown;
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -79,7 +53,7 @@ export function Header() {
           />
           <div className="hidden sm:block">
             <p className="text-xl font-extrabold tracking-tight text-white">
-              ลูกชิ้นรสโอชา
+              {siteData.brand.name}
             </p>
           </div>
         </Link>

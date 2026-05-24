@@ -1,9 +1,9 @@
 import WhyChooseUs from "@/components/whyChooseUs";
 import { HeroSection } from "@/components/hero-section";
-import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import oemData from "@/data/oem.json";
 
 export const metadata = {
   title: "OEM - บริการผลิตสินค้าภายใต้แบรนด์ของคุณ | ลูกชิ้นรสโอชา",
@@ -11,27 +11,19 @@ export const metadata = {
     "บริการ OEM ผลิตลูกชิ้นและผลิตภัณฑ์แปรรูปเนื้อสัตว์ภายใต้แบรนด์ของคุณ ด้วยมาตรฐานการผลิตระดับสากล",
 };
 
-const services = [
-  "ผลิตลูกชิ้นหมู ลูกชิ้นเนื้อ ลูกชิ้นไก่ ลูกชิ้นปลา",
-  "ผลิตไส้กรอก หมูยอ และผลิตภัณฑ์แปรรูป",
-  "พัฒนาสูตรใหม่ตามความต้องการ",
-  "ออกแบบบรรจุภัณฑ์",
-  "ผลิตตาม MOQ ที่ยืดหยุ่น",
-  "บริการ Private Label",
-];
-
 export default function OEMPage() {
+  const { description, services, process, cta } = oemData;
+
   return (
     <div className="min-h-screen bg-white">
       <HeroSection
-        title="บริการ OEM"
-        subtitle="ผลิตลูกชิ้นและผลิตภัณฑ์แปรรูปเนื้อสัตว์คุณภาพสูง ภายใต้แบรนด์ของคุณ ด้วยประสบการณ์กว่า 45 ปี"
-        imageSrc="/images/hero.jpg"
+        title="บริการ ODM& OEM"
+        subtitle="วิจัย พัฒนาสูตรและผลิตสินค้าภายใต้แบรนด์ของคุณ ด้วยประสบการณ์กว่า 45 ปี"
+        imageSrc="/images/hero.webp"
         imageAlt="บริการ OEM ลูกชิ้นรสโอชา"
         className="bg-maroon-theme"
       />
 
-      {/* Benefits Section */}
       <WhyChooseUs />
 
       {/* Services List */}
@@ -42,10 +34,7 @@ export default function OEMPage() {
               <h2 className="text-black-theme mb-2 text-4xl font-extrabold">
                 บริการของเรา
               </h2>
-              <p className="mt-4 text-gray-600">
-                เราพร้อมให้บริการผลิตสินค้าภายใต้แบรนด์ของคุณอย่างครบวงจร
-                ตั้งแต่การพัฒนาสูตรจนถึงการจัดส่ง
-              </p>
+              <p className="mt-4 text-gray-600">{description}</p>
               <ul className="mt-8 space-y-4">
                 {services.map((service) => (
                   <li key={service} className="flex items-start gap-3">
@@ -74,28 +63,7 @@ export default function OEMPage() {
             ขั้นตอนการทำงาน
           </h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                step: 1,
-                title: "ปรึกษาความต้องการ",
-                desc: "พูดคุยเพื่อเข้าใจความต้องการของคุณ",
-              },
-              {
-                step: 2,
-                title: "พัฒนาสูตร",
-                desc: "ทีม R&D พัฒนาสูตรตามที่คุณต้องการ",
-              },
-              {
-                step: 3,
-                title: "ตัวอย่างและปรับปรุง",
-                desc: "ทดลองชิมและปรับปรุงจนพอใจ",
-              },
-              {
-                step: 4,
-                title: "ผลิตและจัดส่ง",
-                desc: "ผลิตตามออเดอร์และจัดส่งตรงเวลา",
-              },
-            ].map((item) => (
+            {process.map((item) => (
               <div key={item.step} className="relative text-center">
                 <div className="bg-maroon-theme mx-auto flex h-12 w-12 items-center justify-center rounded-full text-xl font-bold text-white">
                   {item.step}
@@ -114,12 +82,11 @@ export default function OEMPage() {
       <section className="bg-maroon-theme relative z-50 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="mb-2 text-4xl font-extrabold text-white lg:text-5xl">
-            พร้อมเริ่มต้นธุรกิจกับเรา?
+            {cta.heading}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
-            ติดต่อเราวันนี้เพื่อปรึกษาและรับใบเสนอราคา
+            {cta.body}
           </p>
-
           <Link
             href="/contact"
             className="group mt-8 inline-flex h-12 items-center justify-center border-2 border-white bg-transparent px-10 py-5 transition-all hover:bg-white active:scale-95"

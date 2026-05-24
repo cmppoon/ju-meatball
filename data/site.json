@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "title": "ลูกชิ้นรสโอชา - Premium Thai Meatballs Since 1978",
+    "description": "Authentic Thai meatballs made with premium ingredients and traditional recipes since 1978. Order now for the best meatballs in Thailand.",
+    "keywords": "meatballs, Thai food, ลูกชิ้น, ลูกชิ้นรสโอชา, authentic Thai meatballs"
+  },
+  "brand": {
+    "name": "ลูกชิ้นรสโอชา",
+    "tagline": "ลูกชิ้นคุณภาพพรีเมียม สูตรดั้งเดิมกว่า 45 ปี รสชาติอร่อยที่ครอบครัวไทยไว้วางใจ",
+    "copyright": "ลูกชิ้นรสโอชา. สงวนลิขสิทธิ์ทั้งหมด."
+  },
+  "navigation": [
+    { "name": "หน้าหลัก", "href": "/" },
+    { "name": "สินค้า", "href": "/products" },
+    { "name": "เกี่ยวกับเรา", "href": "/about" },
+    { "name": "บทความ", "href": "/articles" },
+    { "name": "ติดต่อเรา", "href": "/contact" }
+  ]
+}

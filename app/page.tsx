@@ -4,72 +4,49 @@ import { ScrollLink } from "@/components/scrollToLinkBtn";
 import Services from "@/components/services";
 import Stats from "@/components/stats";
 import WhyChooseUs from "@/components/whyChooseUs";
-import { ArrowRight, Award, Clock, Heart, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-const features = [
-  {
-    icon: Clock,
-    title: "สูตรดั้งเดิม 45 ปี",
-    description: "สูตรลับที่สืบทอดมาจากรุ่นสู่รุ่น",
-  },
-  {
-    icon: Heart,
-    title: "วัตถุดิบพรีเมียม",
-    description: "คัดสรรเนื้อสัตว์คุณภาพสูงทุกชิ้น",
-  },
-  {
-    icon: Award,
-    title: "มาตรฐาน อย.",
-    description: "ผ่านการรับรองคุณภาพจาก อย.",
-  },
-  {
-    icon: Users,
-    title: "ลูกค้าไว้วางใจ",
-    description: "ให้บริการลูกค้ามากกว่า 10,000 ราย",
-  },
-];
+import homeData from "@/data/home.json";
 
 export default function HomePage() {
+  const { hero, about, cta, features } = homeData;
+
   return (
     <>
       {/* Hero Section */}
       <section className="bg-black-theme relative flex min-h-screen flex-col overflow-hidden">
-        {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
-            src="/images/hero.jpg"
+            src="/images/landing.webp"
             alt="ลูกชิ้นรสโอชา - ความอร่อยที่คุณไว้วางใจ"
             fill
-            className="object-cover opacity-40"
+            className="object-cover opacity-60"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-black via-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/40 to-transparent" />
         </div>
 
-        {/* Content Wrapper */}
         <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-4 py-8 md:py-20 lg:px-8">
           <div className="grid w-full items-center gap-8 md:gap-12 lg:mt-8 lg:grid-cols-2">
             {/* Left - Text */}
             <div className="space-y-6 text-center lg:text-left">
               <div className="inline-block">
                 <span className="text-dark-yellow-theme text-xs font-bold tracking-[0.3em] uppercase md:text-sm">
-                  Since 1978
+                  {hero.badge}
                 </span>
               </div>
 
               <h1 className="mb-4 text-white md:mb-6">
                 <span className="mr-3 inline-block text-5xl leading-none font-extrabold tracking-tight sm:text-6xl md:mr-4 md:text-8xl lg:mr-0 lg:block lg:text-9xl">
-                  ลูกชิ้น
+                  {hero.heading1}
                 </span>
                 <span className="text-maroon-theme inline-block text-5xl leading-tight font-extrabold tracking-tight sm:text-6xl md:text-8xl lg:block lg:text-9xl">
-                  รสโอชา
+                  {hero.heading2}
                 </span>
               </h1>
               <p className="mx-auto mb-6 max-w-md text-lg leading-relaxed text-white/70 md:mb-6 md:text-xl lg:mx-0">
-                ลูกชิ้นคุณภาพพรีเมียม สูตรดั้งเดิมกว่า 45 ปี
-                รสชาติที่คุณไว้วางใจ
+                {hero.tagline}
               </p>
 
               <div className="flex flex-col justify-center gap-4 pt-2 sm:flex-row md:pt-4 lg:justify-start">
@@ -110,19 +87,34 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Bottom Stats Bar */}
         <Stats />
       </section>
 
       <MarqueeBanner />
 
-      <section className="relative overflow-hidden bg-gray-50 px-4 py-18 lg:py-24">
+      <section className="relative overflow-hidden bg-gray-50 px-4 py-16 lg:py-24">
         <div className="pointer-events-none absolute top-0 right-0 h-full w-1/2 bg-linear-to-bl from-[#D4A853]/5 to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="grid items-center gap-16 lg:grid-cols-2">
-            {/* Left - Image Grid */}
-            <div className="relative">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            {/* Left - Mobile: single image, Desktop: mosaic grid */}
+
+            {/* Mobile single image */}
+            <div className="relative aspect-4/3 overflow-hidden shadow-lg lg:hidden">
+              <Image
+                src="/images/about-meatball.webp"
+                alt="Premium Meatballs"
+                fill
+                className="object-cover"
+              />
+              <div className="bg-maroon-theme absolute bottom-0 left-0 px-6 py-4">
+                <p className="text-4xl font-extrabold text-white">{about.badge.number}</p>
+                <p className="text-xs tracking-widest text-white/80 uppercase">{about.badge.label}</p>
+              </div>
+            </div>
+
+            {/* Desktop mosaic */}
+            <div className="relative hidden lg:block">
               <div className="bg-dark-yellow-theme absolute -top-6 -left-6 z-0 h-32 w-32" />
               <div className="border-maroon-theme/10 absolute -right-6 -bottom-6 z-0 h-48 w-48 border-4" />
 
@@ -137,9 +129,9 @@ export default function HomePage() {
                     />
                   </div>
                   <div className="bg-maroon-theme relative flex aspect-square flex-col items-center justify-center overflow-hidden shadow-lg">
-                    <p className="text-5xl font-extrabold text-white">45+</p>
+                    <p className="text-5xl font-extrabold text-white">{about.badge.number}</p>
                     <p className="mt-2 text-sm tracking-widest text-white/80 uppercase">
-                      Years
+                      {about.badge.label}
                     </p>
                   </div>
                 </div>
@@ -155,7 +147,7 @@ export default function HomePage() {
                   </div>
                   <div className="relative aspect-4/5 overflow-hidden shadow-lg">
                     <Image
-                      src="/images/about-tradition.jpg"
+                      src="/images/about-tradition.webp"
                       alt="Traditional Recipe"
                       fill
                       className="object-cover"
@@ -174,20 +166,17 @@ export default function HomePage() {
               </div>
 
               <h2 className="text-black-theme text-5xl leading-tight font-extrabold lg:text-6xl">
-                ตำนานความอร่อย
+                {about.heading}
                 <br />
-                <span className="text-maroon-theme">ที่สืบทอดมา</span>
+                <span className="text-maroon-theme">{about.headingHighlight}</span>
               </h2>
 
               <p className="text-muted-foreground text-lg leading-relaxed">
-                ลูกชิ้นรสโอชา ก่อตั้งขึ้นในปี พ.ศ. 2521
-                ด้วยความมุ่งมั่นในการสร้างสรรค์ ลูกชิ้นคุณภาพสูงสุด
-                เราใช้สูตรลับดั้งเดิมที่สืบทอดมาจากรุ่นสู่รุ่น
-                ผสมผสานกับเทคโนโลยีการผลิตที่ทันสมัย
+                {about.body}
               </p>
 
               <div className="grid grid-cols-2 gap-6 pt-4">
-                {features.slice(0, 2).map((feature, index) => (
+                {features.map((feature, index) => (
                   <div
                     key={index}
                     className="border-dark-yellow-theme hover:border-maroon-theme border-l-4 pl-4 transition-colors"
@@ -218,29 +207,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Section */}
       <Services />
-
-      {/* Products Section */}
       <ProductSlider />
-
-      {/* Benefits Section */}
       <WhyChooseUs />
 
-      {/* CTA Section - Bold */}
-      <section className="bg-maroon-theme relative overflow-hidden py-32">
-        {/* Background Pattern */}
+      {/* CTA Section */}
+      <section className="bg-maroon-theme relative overflow-hidden py-20 lg:py-28">
         <div className="absolute inset-0 opacity-10">
           <div className="stripe-pattern absolute inset-0" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center lg:px-8">
           <h2 className="mb-6 text-5xl leading-tight font-extrabold text-white lg:text-7xl">
-            พร้อมสัมผัสความอร่อย?
+            {cta.heading}
           </h2>
           <p className="mx-auto mb-10 max-w-2xl text-xl text-white/80">
-            ติดต่อเราวันนี้เพื่อสั่งซื้อลูกชิ้นคุณภาพพรีเมียม
-            หรือสอบถามข้อมูลเพิ่มเติมเกี่ยวกับบริการของเรา
+            {cta.body}
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link

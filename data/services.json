@@ -1,0 +1,46 @@
+{
+  "cards": [
+    {
+      "name": "ร้านอาหาร",
+      "href": "/services/restaurant",
+      "desc": "ราคาส่งพิเศษสำหรับร้านอาหารและผู้ประกอบการ"
+    },
+    {
+      "name": "OEM",
+      "href": "/services/oem",
+      "desc": "รับจ้างผลิตลูกชิ้นสูตรเฉพาะสำหรับแบรนด์ของคุณ"
+    },
+    {
+      "name": "ตัวแทนจำหน่าย",
+      "href": "/services/distributor",
+      "desc": "ร่วมเป็นส่วนหนึ่งของเครือข่ายความอร่อยทั่วประเทศ"
+    },
+    {
+      "name": "Service",
+      "href": "/services/service",
+      "desc": "เริ่มต้นธุรกิจง่ายๆ ด้วยระบบแฟรนไชส์มาตรฐาน"
+    }
+  ],
+  "navigationDropdown": [
+    {
+      "name": "ร้านอาหาร",
+      "href": "/services/restaurant",
+      "description": "โอกาสธุรกิจร้านอาหารลูกชิ้น"
+    },
+    {
+      "name": "OEM",
+      "href": "/services/oem",
+      "description": "บริการผลิตสินค้าภายใต้แบรนด์ของคุณ"
+    },
+    {
+      "name": "ตัวแทนจำหน่าย",
+      "href": "/services/distributor",
+      "description": "ร่วมเป็นตัวแทนจำหน่ายกับเรา"
+    },
+    {
+      "name": "Service",
+      "href": "/services/service",
+      "description": "โอกาสธุรกิจแฟรนไชส์ลูกชิ้น"
+    }
+  ]
+}

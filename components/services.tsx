@@ -1,29 +1,6 @@
-
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-
-const services = [
-  {
-    name: "OEM",
-    href: "/services/oem",
-    desc: "รับจ้างผลิตลูกชิ้นสูตรเฉพาะสำหรับแบรนด์ของคุณ",
-  },
-  {
-    name: "ตัวแทนจำหน่าย",
-    href: "/services/distributor",
-    desc: "ร่วมเป็นส่วนหนึ่งของเครือข่ายความอร่อยทั่วประเทศ",
-  },
-  {
-    name: "แฟรนไชส์",
-    href: "/services/franchise",
-    desc: "เริ่มต้นธุรกิจง่ายๆ ด้วยระบบแฟรนไชส์มาตรฐาน",
-  },
-  {
-    name: "ร้านอาหาร",
-    href: "/contact",
-    desc: "ราคาส่งพิเศษสำหรับร้านอาหารและผู้ประกอบการ",
-  },
-];
+import servicesData from "@/data/services.json";
 
 export default function Services() {
   return (
@@ -39,13 +16,13 @@ export default function Services() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((service, index) => (
+          {servicesData.cards.map((service, index) => (
             <Link
               key={index}
               href={service.href}
               className="group hover:border-maroon-theme hover:bg-maroon-theme flex flex-col border-2 border-gray-200 bg-white p-8 transition-all duration-300"
             >
-              <div className="mb-8 flex h-16 w-16 items-center justify-center">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center">
                 <span className="text-maroon-theme text-2xl font-black transition-colors duration-300 group-hover:text-white">
                   0{index + 1}
                 </span>

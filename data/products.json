@@ -1,0 +1,97 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "ลูกชิ้นหมู",
+      "image": "/images/product-1.webp",
+      "sliderImage": "/images/slider-1.webp",
+      "showInSlider": true,
+      "description": "ลูกชิ้นหมูแท้ 100% เนื้อนุ่ม เด้ง รสชาติกลมกล่อม กลิ่นหอมธรรมชาติ ",
+      "features": ["เนื้อหมูแท้ 100%", "มี 4 ขนาด", "ลวก ปิ้ง ต้ม ทอด"]
+    },
+    {
+      "id": 2,
+      "name": "ลูกชิ้นหมูไซส์เล็ก",
+      "image": "/images/product-2.webp",
+      "sliderImage": "/images/slider-1.webp",
+      "showInSlider": false,
+      "description": "สูตรผลิตมาสำหรับร้านก๋วยเตี๋ยวเรือโดยเฉพาะ เข้มข้น คงคุณภาพ",
+      "features": [
+        "แน่น เด้ง เนื้อเน้นๆ",
+        "ขนาด 130-200 ลูก/กก.",
+        "สำหรับก๋วยเตี๋ยวเรือหรือร้านที่ต้องการไซส์เล็ก"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "ลูกชิ้นเอ็นหมู",
+      "image": "/images/product-3.webp",
+      "sliderImage": "/images/slider-2.webp",
+      "showInSlider": true,
+      "description": "ผลิตจากเอ็นหมูแท้ กรุบเด้ง หอมกลิ่นพริกไทย",
+      "features": [
+        "เนื้อหมูแท้ 100%",
+        "ขนาดมาตรฐาน 95 ลูก/กก.",
+        "ลวก ปิ้ง ต้ม ทอด"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "ลูกชิ้นเนื้อ",
+      "image": "/images/product-4.webp",
+      "sliderImage": "/images/slider-3.webp",
+      "showInSlider": true,
+      "description": "ผลิตจากเนื้อวัวแท้ 100% เนื้อหนึบ เด้ง รสชาติกลมกล่อม กลิ่นหอมธรรมชาติ",
+      "features": ["เนื้อวัวแท้ 100%", "มี 3 ขนาด", "ลวก ปิ้ง ต้ม ทอด"]
+    },
+    {
+      "id": 5,
+      "name": "ลูกชิ้นเนื้อ ไซส์เล็ก",
+      "image": "/images/product-5.webp",
+      "sliderImage": "/images/slider-3.webp",
+      "showInSlider": false,
+      "description": "สูตรผลิตมาสำหรับร้านก๋วยเตี๋ยวเรือโดยเฉพาะ เข้มข้น คงคุณภาพ",
+      "features": ["แน่น เด้ง เนื้อเน้นๆ", "ขนาด 130-200 ลูก/กก.", "สำหรับก๋วยเตี๋ยวเรือหรือร้านที่ต้องการไซส์เล็ก"]
+    },
+    {
+      "id": 6,
+      "name": "ลูกชิ้นเอ็นเนื้อ",
+      "image": "/images/product-6.webp",
+      "sliderImage": "/images/slider-4.webp",
+      "showInSlider": true,
+      "description": "ผลิตจากเอ็นเนื้อแท้ กรุบเด้ง หอมกลิ่นเนื้อวัวผสมผสานกับพริกไทย ",
+      "features": [
+        "เนื้อวัวแท้ 100%",
+        "ขนาดมาตรฐาน 95 ลูก/กก.",
+        "ลวก ปิ้ง ต้ม ทอด"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "ลูกชิ้นอกไก่",
+      "image": "/images/product-7.webp",
+      "sliderImage": "/images/slider-5.webp",
+      "showInSlider": true,
+      "description": "ผลิตจากอกไก่ลอกหนัง เด้ง แน่น คลีนด้วยอร่อยด้วย",
+      "features": ["อกไก่ 100%", "ขนาดมาตรฐาน 105 ลูก/กก."]
+    },
+    {
+      "id": 8,
+      "name": "รับผลิต OEM",
+      "image": "/images/product-8.webp",
+      "sliderImage": "/images/slider-6.webp",
+      "showInSlider": true,
+      "description": "รับวิจัยและพัฒนาสูตรลูกชิ้นที่ยังคงเน้นที่คุณภาพ",
+      "features": [
+        "Customize ได้ตามความต้องการ",
+        "ตีแบรนด์ในแบรนด์ลูกค้าได้",
+        "ขั้นต่ำการผลิตที่เข้าถึงได้"
+      ]
+    }
+  ],
+  "wholesale": {
+    "heading": "ต้องการสั่งซื้อ",
+    "headingHighlight": "จำนวนมาก?",
+    "body": "เรามีบริการขายส่งสำหรับร้านอาหาร ร้านก๋วยเตี๋ยว และผู้ประกอบการ พร้อมส่วนลดพิเศษและระบบจัดส่งควบคุมอุณหภูมิทั่วประเทศ"
+  }
+}

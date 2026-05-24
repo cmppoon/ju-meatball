@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "slug": "history-of-thai-meatballs",
+    "title": "ประวัติความเป็นมาของลูกชิ้นไทย",
+    "titleEn": "The History of Thai Meatballs",
+    "excerpt": "ลูกชิ้นเป็นอาหารที่มีประวัติยาวนานในประเทศไทย เริ่มต้นจากการนำเข้ามาโดยชาวจีนและได้รับการพัฒนาจนกลายเป็นอาหารยอดนิยมของคนไทย",
+    "image": "/images/product-1.jpg",
+    "date": "15 มกราคม 2024",
+    "category": "ความรู้"
+  },
+  {
+    "id": 2,
+    "slug": "how-to-choose-quality-meatballs",
+    "title": "วิธีเลือกซื้อลูกชิ้นคุณภาพดี",
+    "titleEn": "How to Choose Quality Meatballs",
+    "excerpt": "เคล็ดลับการเลือกซื้อลูกชิ้นที่มีคุณภาพ สังเกตจากสี กลิ่น ความยืดหยุ่น และส่วนผสมที่ปลอดภัยต่อสุขภาพ",
+    "image": "/images/product-2.jpg",
+    "date": "28 ธันวาคม 2023",
+    "category": "เคล็ดลับ"
+  },
+  {
+    "id": 3,
+    "slug": "meatball-recipes-for-family",
+    "title": "5 เมนูลูกชิ้นทำง่ายสำหรับครอบครัว",
+    "titleEn": "5 Easy Meatball Recipes for Family",
+    "excerpt": "รวม 5 สูตรอาหารจากลูกชิ้นที่ทำได้ง่าย อร่อย และเหมาะสำหรับทุกคนในครอบครัว ตั้งแต่ต้มยำไปจนถึงผัดพริกแกง",
+    "image": "/images/product-3.jpg",
+    "date": "10 ธันวาคม 2023",
+    "category": "สูตรอาหาร"
+  },
+  {
+    "id": 4,
+    "slug": "health-benefits-of-meatballs",
+    "title": "คุณค่าทางโภชนาการของลูกชิ้น",
+    "titleEn": "Health Benefits of Meatballs",
+    "excerpt": "ลูกชิ้นเป็นแหล่งโปรตีนที่ดี มีไขมันต่ำ และสามารถเป็นส่วนหนึ่งของอาหารเพื่อสุขภาพได้หากเลือกอย่างถูกวิธี",
+    "image": "/images/product-4.jpg",
+    "date": "5 พฤศจิกายน 2023",
+    "category": "สุขภาพ"
+  },
+  {
+    "id": 5,
+    "slug": "street-food-meatball-culture",
+    "title": "วัฒนธรรมลูกชิ้นปิ้งริมทาง",
+    "titleEn": "Thai Street Food Meatball Culture",
+    "excerpt": "สำรวจวัฒนธรรมการกินลูกชิ้นปิ้งริมทางของคนไทย ตั้งแต่รถเข็นหน้าโรงเรียนไปจนถึงตลาดนัดยามเย็น",
+    "image": "/images/hero.webp",
+    "date": "20 ตุลาคม 2023",
+    "category": "วัฒนธรรม"
+  },
+  {
+    "id": 6,
+    "slug": "meatball-storage-tips",
+    "title": "วิธีเก็บรักษาลูกชิ้นให้สดใหม่",
+    "titleEn": "Meatball Storage Tips",
+    "excerpt": "เรียนรู้วิธีการเก็บรักษาลูกชิ้นอย่างถูกวิธี ทั้งการแช่เย็นและแช่แข็ง เพื่อคงความสดและรสชาติที่ดี",
+    "image": "/images/about-factory.jpg",
+    "date": "8 ตุลาคม 2023",
+    "category": "เคล็ดลับ"
+  }
+]

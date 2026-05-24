@@ -1,14 +1,6 @@
-const messages = [
-  "PREMIUM QUALITY",
-  "ลูกชิ้นคุณภาพ",
-  "SINCE 1978",
-  "สูตรดั้งเดิม 45 ปี",
-  "AUTHENTIC TASTE",
-  "รสชาติแท้ดั้งเดิม",
-  "TRUSTED BRAND",
-  "แบรนด์ที่ไว้วางใจ",
-];
+import marqueeData from "@/data/marquee.json";
 
+const { messages } = marqueeData;
 const repeatedMessages = [...messages, ...messages, ...messages, ...messages];
 
 export function MarqueeBanner() {
